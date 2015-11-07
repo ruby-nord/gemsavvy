@@ -16,6 +16,7 @@ gem 'puma',        '~> 2.15.2'
 gem 'rails',       '~> 4.2.4'
 gem 'redis',       '~> 3.2.1'
 gem 'reform',      '~> 2.0.5'
+gem 'rollbar',     '~> 2.5.2'
 gem 'sidekiq',     '~> 3.5.3'
 gem 'simple_form', '~> 3.2.0'
 gem 'sinatra',     '~> 1.4.6', require: nil
