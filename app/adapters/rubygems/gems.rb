@@ -4,7 +4,7 @@ module Rubygems
     def info(gem_name)
       info = ::Gems.info gem_name
 
-      GemInfo.new(
+      Info.new(
         info['source_code_uri'],
         info['homepage_uri'],
         info['project_uri']
@@ -13,7 +13,7 @@ module Rubygems
 
     private
 
-    class GemInfo < Struct.new(:source_code_uri, :homepage_uri, :project_uri); end
+    class Info < Struct.new(:source_code_uri, :homepage_uri, :project_uri); end
 
   end
 end
