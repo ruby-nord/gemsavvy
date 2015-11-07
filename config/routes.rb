@@ -1,5 +1,9 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
+
+  mount Sidekiq::Web => '/sidekiq'
 
   resources :groups, only: [:new, :create] do
     resources :surveys, only: [:show], module: :groups
