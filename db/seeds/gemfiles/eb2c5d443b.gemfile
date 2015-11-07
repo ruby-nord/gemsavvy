@@ -1,0 +1,137 @@
+source 'https://rails-assets.org' do
+    gem 'rails-assets-moment'
+end
+
+gem 'cancan'
+
+gem "paperclip", "~> 3.0"
+gem 'paperclip-meta'
+gem 'delayed_paperclip'
+gem 'redis', :require => false
+gem 'kiba', :require => false
+gem 'rabl', :require => false
+gem 'oj'
+gem 'decent_exposure', :require => false
+gem 'draper', :require => false
+gem 'naught', :require => false
+gem 'equalizer', :require => false
+gem 'fog', :require => 'fog'
+gem 'celluloid', :require => false
+
+gem 'rmagick', '~> 2.14.0'  # libmagickwand-dev # libmagickcore-dev
+
+gem 'bootstrap-wysihtml5-rails', require: 'bootstrap-wysihtml5-rails', github: 'Nerian/bootstrap-wysihtml5-rails', ref: '59f3d2'
+gem 'bootstrap-datepicker-rails'
+gem 'sanitize'
+gem 'quiet_assets'
+
+
+
+gem 'whenever', require: false
+
+gem 'mysql2'
+
+group :production, :staging do
+   # libmysqlclient-dev
+  gem 'unicorn'
+  gem 'daemons' # delayed ?
+end
+
+gem 'test-unit' # needs to be specified and fails on deploy since ruby 2.2.2 rails 3.2.22 if in group :development
+group :development do
+
+  gem 'rspec-rails', :require => false
+  gem "letter_opener" #, git: 'git@github.com:tiredenzo/letter_opener.git'
+  gem 'spring', :require => false
+  gem 'spring-commands-rspec'
+  gem 'guard-rspec'
+  gem 'byebug'
+  # gem 'rb-fsevent' if `uname` =~ /Darwin/
+
+  #  guard -P livereload
+  # gem 'rack-livereload'
+  gem 'guard-livereload'
+
+  gem 'rails-erd'
+  gem 'railroady'
+
+  gem 'capistrano'
+  gem 'rvm-capistrano', :require => false
+  gem 'capistrano-unicorn'
+
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+end
+
+group :test do
+  gem 'bogus', :require => false
+  gem 'json_spec', :require => false
+  gem "factory_girl_rails", :require => false
+  gem "database_cleaner", :require => false
+  gem "webmock", :require => false
+  gem "shoulda-matchers", :require => false
+end
+
+gem 'activemerchant', :require => false
+gem 'adyen', github: 'wvanbergen/adyen', ref: '00864d33487b84aaf710365abdb36816c6dde6b7'
+
+
+gem 'yui-compressor'
+gem 'email_validator'
+# gem 'acts_as_relation'
+# gem 'acts_as_relation', '~> 0.1'
+gem 'globalize3'
+
+gem 'delayed_job_active_record'
+
+gem "rails_config"
+
+gem 'meta-tags', require: 'meta_tags'
+
+gem 'pdfkit' # bill pdf
+
+gem 'browser'
+
+gem 'will_paginate', '~> 3.0'
+
+gem 'rest-client'
+
+gem 'newrelic_rpm'
+# gem 'parallel'
+
+gem 'premailer', github: 'premailer/premailer'
+gem 'premailer-rails', github: 'fphilipe/premailer-rails'
+gem 'nokogiri'
+
+gem 'simple_form'#, git: 'git@github.com:plataformatec/simple_form.git'
+
+gem 'geoip'
+
+gem "prawn-labels"
+
+gem "yahoo_currency", github: 'scottbarr/yahoo_currency'
+
+gem 'ransack'
+
+gem 'strong_parameters'
+
+gem 'rubyzip', '>= 1.0.0'
+
+gem 'gmaps4rails'
+
+gem "github-markup", require: 'github/markup'
+gem 'markdown'
+gem 'tilt'
+gem 'tilt-handlebars'
+gem 'handlebars'
+
+gem 'simple_token_authentication', github: 'gonzalo-bulnes/simple_token_authentication'
+gem 'active_model_serializers'
+gem 'apipie-rails'
+
+gem 'faraday'
+
+# quick ugly hack because no cookie store
+gem 'symmetric-encryption'
