@@ -1,4 +1,7 @@
 development:
+  ACTIVEADMIN_USERNAME: "miners"
+  ACTIVEADMIN_PASSWORD: "coucoulechat"
+
   DATABASE_USERNAME: "postgres"
   DATABASE_PASSWORD: ""
   DATABASE_HOST: "localhost"
@@ -7,7 +10,11 @@ development:
   REDIS_PORT: "6379"
   REDIS_DATABASE: "12"
 
+
 production:
+  ACTIVEADMIN_USERNAME: ""
+  ACTIVEADMIN_PASSWORD: ""
+
   REDIS_HOST: ""
   REDIS_PORT: ""
   REDIS_DATABASE: ""
