@@ -41,7 +41,7 @@ img {
   width: $image-width;
 }
 
-nav, footer, .page-footer {
+nav, footer, .page-footer, .btn-primary {
   background: $primary-color;
 }
 
@@ -113,10 +113,14 @@ h1, h2, h3, h4, h5 {
   padding: 24px 0 0 0;
 }
 
-.testimonials {
-  overflow: hidden;
-  padding: 24px 0;
-  margin: 0 0 0 0;
+.upload--gemfile {
+  .btn {
+    margin: 24px 0 0 0;
+  }
+  .error-block, .help-block {
+    color: $error-color;
+    padding: 3px;
+  }
 }
 @media #{$small-and-down} {
 

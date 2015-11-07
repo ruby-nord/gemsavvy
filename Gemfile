@@ -25,7 +25,6 @@ gem 'turbolinks',  '~> 2.5.3'
 # Assets gems
 gem 'autoprefixer-rails', '~> 6.1.0'
 gem 'materialize-sass',   '~> 0.97.1'
-gem 'font-awesome-sass',  '~> 4.4.0'
 gem 'jquery-rails',       '~> 4.0.5'
 gem 'sass-rails',         '~> 5.0'
 gem 'uglifier',           '~> 2.7.2'
