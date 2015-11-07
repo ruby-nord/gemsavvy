@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title Gemsavvy
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    div class="container"
+      - flash.each do |type, message|
+        div class="alert alert-#{flash_type_to_class_name(type)}" role="alert"
+          = message
+
+      = yield
