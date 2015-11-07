@@ -4,7 +4,7 @@ module Groups
       survey  = ::Surveys::FindByCodeService.new(group.id, params[:id]).call
       stats   = ::Surveys::GenerateStatsService.new(survey.id).call
 
-      @context = Surveys::ShowContext.new(survey, stats)
+      @context = ::Surveys::ShowContext.new(survey, stats)
     end
   end
 end
