@@ -1,11 +1,7 @@
 class BaseQuery
   @model = nil
 
-  private
-
   attr_reader :relation
-
-  public
 
   def initialize(relation=nil)
     relation  = self.class.model.all unless relation
