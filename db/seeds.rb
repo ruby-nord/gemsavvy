@@ -74,8 +74,10 @@ rails_rumble_red_miners_gemfile = rails_rumble_survey.gemfiles.create!(
 Gemfiles::ImportService.new(rails_rumble_red_miners_gemfile.id).call
 
 Dir[Rails.root.join('db/seeds/gemfiles/*.gemfile')].each_with_index do |filename, index|
+  gemfile_number = "#{index + 1}".rjust(2, '0')
+
   gemfile = red_miners_survey.gemfiles.create!(
-    owner_name: "Red Miners #{index + 1}",
+    owner_name: "Red Miners #{gemfile_number}",
     document:   File.readlines(filename).join
   )
   Gemfiles::ImportService.new(gemfile.id).call
