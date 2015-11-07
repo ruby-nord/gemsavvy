@@ -29,9 +29,19 @@ ActiveAdmin.register Survey do
     end
 
     panel 'Gemfiles' do
-      table_for survey.gemfiles.order(:owner_name) do
-        column :owner_name do |gempackage|
-          link_to gempackage.owner_name, admin_gempackage_path(gempackage)
+      max_resources_listed  = Settings.admin.max_resources_listed
+      all_gemfiles_link     = admin_survey_gemfiles_path(survey)
+
+      header_action link_to 'All gemfiles', all_gemfiles_link
+
+      if survey.gemfiles.count > max_resources_listed
+        text_node "This survey is big! We're only showing the last #{max_resources_listed} gemfiles. "
+        text_node link_to('See all gemfiles', all_gemfiles_link)
+      end
+
+      table_for survey.gemfiles.order(:owner_name).limit(max_resources_listed) do
+        column :owner_name do |gemfile|
+          link_to gemfile.owner_name, admin_survey_gemfile_path(gemfile.survey, gemfile)
         end
 
         column :created_at
