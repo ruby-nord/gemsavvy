@@ -1,6 +1,6 @@
 body {
   background: $white;
-  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
 }
 
 .brand-logo {
@@ -12,10 +12,10 @@ body {
 }
 
 .light-font {
-  font-weight: 300;
+  font-weight: lighter;
 }
 .extra-bold-font {
-  font-weight: 800;
+  font-weight: bold;
 }
 
 img {
@@ -34,8 +34,11 @@ footer.page-footer {
   margin-top: 0;
 }
 
-h1, h2, h3, h4, h5 {
-  color: $primary-color;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: lighter;
+}
+strong {
+  font-weight: bold;
 }
 .sideicon {
   text-align: center;
@@ -52,7 +55,6 @@ h1, h2, h3, h4, h5 {
   color: $white;
   h1, h2, h3, h4, h5 {
     color: $white;
-    font-weight: bold;
   }
 }
 .gemsavvy__masthead {
