@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.3'
+
 gem 'activeadmin', github: 'activeadmin'
 gem 'figaro',      '~> 1.1.1'
 gem 'friendly_id', '~> 5.1.0'
