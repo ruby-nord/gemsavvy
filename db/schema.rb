@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107020916) do
+ActiveRecord::Schema.define(version: 20151107044426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,16 +39,6 @@ ActiveRecord::Schema.define(version: 20151107020916) do
 
   add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
 
-  create_table "create_gemfiles_gempackages", force: :cascade do |t|
-    t.integer  "gemfile_id"
-    t.integer  "gempackage_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "create_gemfiles_gempackages", ["gemfile_id"], name: "index_create_gemfiles_gempackages_on_gemfile_id", using: :btree
-  add_index "create_gemfiles_gempackages", ["gempackage_id"], name: "index_create_gemfiles_gempackages_on_gempackage_id", using: :btree
-
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -71,6 +61,16 @@ ActiveRecord::Schema.define(version: 20151107020916) do
   end
 
   add_index "gemfiles", ["survey_id"], name: "index_gemfiles_on_survey_id", using: :btree
+
+  create_table "gemfiles_gempackages", force: :cascade do |t|
+    t.integer  "gemfile_id"
+    t.integer  "gempackage_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "gemfiles_gempackages", ["gemfile_id"], name: "index_gemfiles_gempackages_on_gemfile_id", using: :btree
+  add_index "gemfiles_gempackages", ["gempackage_id"], name: "index_gemfiles_gempackages_on_gempackage_id", using: :btree
 
   create_table "gempackages", force: :cascade do |t|
     t.string   "name"
@@ -117,9 +117,9 @@ ActiveRecord::Schema.define(version: 20151107020916) do
   add_index "surveys", ["code"], name: "index_surveys_on_code", unique: true, using: :btree
   add_index "surveys", ["group_id"], name: "index_surveys_on_group_id", using: :btree
 
-  add_foreign_key "create_gemfiles_gempackages", "gemfiles"
-  add_foreign_key "create_gemfiles_gempackages", "gempackages"
   add_foreign_key "gemfiles", "surveys"
+  add_foreign_key "gemfiles_gempackages", "gemfiles"
+  add_foreign_key "gemfiles_gempackages", "gempackages"
   add_foreign_key "gempackages", "categories"
   add_foreign_key "surveys", "groups"
 end
