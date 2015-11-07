@@ -1,0 +1,40 @@
+source 'https://rubygems.org'
+
+gem 'rails', '~> 3.2.22'
+
+gem 'haml-rails'
+gem 'dotenv-rails'
+
+group :assets do
+  gem 'less-rails'
+  gem 'sass-rails', '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'therubyracer'
+
+  gem 'uglifier', '>= 1.0.3'
+end
+gem 'font-awesome-rails'
+
+gem 'jquery-rails'
+
+gem 'kaminari' #, git: 'git@github.com:amatsuda/kaminari.git'
+
+gem 'devise' # , '2.2.3' # overrides omg kill this fast
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.1'
+gem 'omniauth-google-oauth2', '0.2.2'
+# gem 'omniauth-twitter'
+
+gem 'awesome_nested_set'
+
+gem 'activeadmin'
+gem 'active_admin-awesome_nested_set'
+gem 'activeadmin-globalize3'
+# gem "activeadmin-globalize", github: 'stefanoverna/activeadmin-globalize', branch: 'master'
+gem 'meta_search',    '>= 1.1.0.pre'
+
+gem 'twitter-bootstrap-rails', :github => 'seyhunak/twitter-bootstrap-rails', branch: 'master' #branch: 'bootstrap3'
+
+gem 'angularjs-rails' #, git: 'git@github.com:tiredenzo/angularjs-rails.git'
+gem 'underscore-rails'
+gem "i18n-js"

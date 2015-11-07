@@ -1,0 +1,87 @@
+source 'https://rubygems.org'
+
+gem 'railties'
+gem 'actionpack'
+gem 'activerecord'
+gem 'sprockets-rails'
+gem 'shopify_app'
+gem 'pg'
+
+gem 'bugsnag',            '~> 2.8.12'
+gem 'carrierwave',        '~> 0.10.0'
+gem 'country_select',     '~> 2.2.0'
+gem 'decent_exposure',    '~> 2.3.2'
+gem 'devise',             '~> 3.5.1'
+gem 'draper',             '~> 2.1.0'
+gem 'enumerize',          '~> 1.0.0'
+gem 'faraday',            '~> 0.9.1'
+gem 'faraday_middleware', '~> 0.10.0'
+gem 'fog'
+gem 'i18n-js',            '~> 2.1.2'
+gem 'kaminari',           '~> 0.16.3'
+gem 'mini_magick',        '~> 4.2.7'
+gem 'money-rails',        '~> 1.4.1'
+gem 'nokogiri',           '~> 1.6.6.2'
+gem 'pundit',             '~> 1.0.1'
+gem 'rabl',               '~> 0.11.6'
+gem 'rails_config',       '~> 0.4.2'
+gem 'reform'
+gem 'sidekiq',            '~> 3.4.2'
+gem 'simple_form',        '~> 3.1.0'
+gem 'sinatra',            '~> 1.4.6', require: nil # for sidekiq (not used yet)
+gem 'whenever',           '~> 0.9.4'
+
+gem 'bootstrap-sass',     '~> 3.3.4'
+gem 'coffee-rails'
+gem 'compass',            '1.0.3'
+gem 'compass-rails',      '2.0.4'
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'jquery-fileupload-rails'
+gem 'sass-rails',         '5.0.1'
+gem 'uglifier'
+
+gem 'puma'
+gem 'newrelic_rpm'
+
+gem 'activeadmin'
+
+gem 'swagger-docs',       '~> 0.1.9'
+gem 'rails_stdout_logging', groups: [:staging, :production]
+
+group :development, :test do
+  gem 'byebug'
+  gem 'dotenv-rails'
+  gem 'factory_girl_rails',   require: false
+  gem 'faker',                require: false
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'guard-rspec'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'quiet_assets'
+  gem 'rack-mini-profiler',   require: false
+  gem 'rails-erd',            require: false
+  gem 'rspec-rails',          require: false
+  gem 'spring',               require: false
+  gem 'spring-commands-rspec'
+  gem 'web-console'
+  gem 'yard',                 require: false
+end
+
+group :test do
+  gem 'capybara',             require: false
+  gem 'capybara-screenshot',  require: false
+  gem 'phantomjs',            require: false
+  gem 'poltergeist',          require: false
+  gem 'connection_pool',      require: false
+  gem 'database_cleaner',     require: false
+  gem 'headless',             require: false
+  gem 'json_spec',            require: false
+  gem 'shoulda-matchers',     require: false
+  gem 'vcr',                  require: false
+  gem 'webmock',              require: false
+end

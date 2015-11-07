@@ -1,0 +1,98 @@
+# NB: *** also require in arena_core.rb ***
+
+# NB: special cases which can't be fully specified in arena_core.gemspec
+gem 'memcache-client', :require => 'memcache'
+gem 'arena-i18n-active_record', :require => 'i18n/active_record'
+gem "therubyracer", :require => 'v8'
+# remove to save space on circleci  gem "recaptcha", :require => "recaptcha/rails"  # needed for the newletter signup
+gem 'rmagick', '2.13.2', :require => false      # see http://is.gd/oybRJn for why the require is set to false
+gem 'resque-rollbar', '0.0.1', :require => false
+gem 'newrelic_rpm'
+gem 'phonelib', '0.4.7'
+
+if RUBY_VERSION =~ /^2/
+  gem 'i18n', '0.7.0'
+end
+if RUBY_VERSION =~ /^1\.9/
+  gem 'i18n', '0.6.9'
+end
+
+group :development do
+  gem 'better_errors'   # *** only use in dev NOT production ***
+  gem 'binding_of_caller'
+  gem 'parallel_tests'
+  gem 'xray-rails'
+  gem 'meta_request'
+  gem 'spring'
+
+  if RUBY_VERSION =~ /^2/
+    gem 'thin', '1.6.3'
+  end
+  if RUBY_VERSION =~ /^1\.9/
+    gem 'thin', '1.5.1'
+  end
+end
+
+group :test do
+  gem 'capybara-email'
+  gem 'selenium-webdriver', '~> 2.45.0'       #New firefox
+  gem 'ffi', '1.9.3'                          #had problem with latest versino, when updating selenium
+  gem 'factory_girl_rails', :require => false # to avoid startup issues on CI server
+  gem 'mocha', :require => false              # http://gofreerange.com/mocha/docs/
+  gem 'shoulda-matchers'
+  gem 'assert_difference'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'timecop', '>=0.7.1'
+  gem 'turn', :require => false
+  gem 'coveralls', :require => false
+  gem 'jslint_on_rails'
+  gem 'brakeman', :require => false
+  gem 'css_lint'
+  gem 'equivalent-xml'
+  gem 'capybara-screenshot'
+  gem 'letter_opener'
+  gem 'parallel'
+  gem 'simplecov', '~> 0.7.1' #https://github.com/colszowka/simplecov/issues/281
+  gem 'capybara', '2.0.3'
+
+  if RUBY_VERSION =~ /^2/
+    gem 'rubyzip'
+  end
+end
+
+group :test, :development do
+  gem 'bullet'
+  gem "minitest-rails"
+  gem "minitest-rails-capybara"
+  gem 'minitest-spec-context'
+  gem 'minitest-rails-shoulda', :github => "kitop/minitest-rails-shoulda", :branch => 'minitest-rails-0.9.2-updates' #https://github.com/newleaders/minitest-rails-shoulda/pull/10#issuecomment-29511441
+  gem 'minitest-metadata', :require => false
+  gem 'capybara_minitest_spec'
+  gem 'minitest-perf'
+  gem 'awesome_print'
+
+  if RUBY_VERSION =~ /^1\.9/
+    gem 'debugger'
+  end
+  if RUBY_VERSION =~ /^2/
+    gem 'pry'
+    gem 'pry-remote'
+    gem 'pry-stack_explorer'
+    gem 'pry-byebug'
+  end
+end
+
+# Gems used only for assets and not require in production environments by default.
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+#  gem 'asset_sync'
+#  gem 'turbo-sprockets-rails3'
+end
+
+group :production, :staging do
+  gem 'unicorn'
+  gem 'unicorn-worker-killer'
+end
