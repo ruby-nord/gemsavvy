@@ -9,7 +9,10 @@ Rails.application.routes.draw do
 
   resources :groups, only: [:new, :create, :show] do
     resources :surveys, only: [:show], module: :groups do
-      resources :gemfiles, only: [:new, :create], module: :surveys
+      scope module: :surveys do
+        resources :gemfiles,        only: [:new, :create]
+        resources :category_charts, only: [:show]
+      end
     end
   end
 end

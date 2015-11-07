@@ -14,8 +14,10 @@ module Surveys
 
     delegate  :logo,        to: :group,     prefix: true
     delegate  :name,        to: :group,     prefix: true
+    delegate  :slug,        to: :group,     prefix: true
     delegate  :website_url, to: :group,     prefix: true
 
+    delegate  :code,        to: :survey,    prefix: true
     delegate  :name,        to: :survey,    prefix: true
 
     def initialize(survey, stats)
