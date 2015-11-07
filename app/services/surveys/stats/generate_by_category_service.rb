@@ -2,6 +2,8 @@ module Surveys
   module Stats
     class GenerateByCategoryService
 
+      Result = Struct.new(:category_name, :gempackages)
+
       private
 
       attr_reader :survey_id, :category_id
@@ -14,7 +16,20 @@ module Surveys
       end
 
       def call
-        # do the big job here
+        Result.new(category.name, gempackages)
+      end
+
+      private
+
+      def category
+        @category ||= Categories::FindByIdService.new(category_id).call
+      end
+
+      def gempackages
+        GempackageQuery.all
+          .by_category_id(category_id)
+          .by_survey_id(survey_id)
+          .order_by_usage
       end
     end
   end

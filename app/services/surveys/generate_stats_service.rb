@@ -16,21 +16,21 @@ module Surveys
     def call
       Result.new(all_categories, all_outsiders)
     end
-  end
 
-  private
+    private
 
-  def all_categories
-    survey.categories.map do |category|
-      Surveys::Stats::GenerateByCategoryService.new(survey_id, category.id).call
+    def all_categories
+      survey.categories.map do |category|
+        Surveys::Stats::GenerateByCategoryService.new(survey_id, category.id).call
+      end
     end
-  end
 
-  def all_outsiders
-    Gempackages::FindAllOutsidersForSurveyService.new(survey_id).call
-  end
+    def all_outsiders
+      Gempackages::FindAllOutsidersForSurveyService.new(survey_id).call
+    end
 
-  def survey
-    @survey ||= Surveys::FindByIdService.new(survey_id).call
+    def survey
+      @survey ||= Surveys::FindByIdService.new(survey_id).call
+    end
   end
 end
