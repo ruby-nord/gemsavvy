@@ -4,12 +4,15 @@ class GroupsController < ApplicationController
   end
 
   def create
-    service = Groups::CreateService.new(GroupForm, params[:group])
-    group   = service.call
+    group_creation = Groups::CreateService.new(GroupForm, params[:group])
+    group          = group_creation.call
+
+    survey_finder  = Surveys::DefaultFinderService.new(group.id)
+    survey         = survey_finder.call
 
     flash[:notice] = "Group #{group.name} has been succesfully created"
 
-    redirect_to root_path
+    redirect_to group_survey_path(group, survey.code)
   rescue Errors::ValidationError => exception
     @group = exception.context[:form]
 
