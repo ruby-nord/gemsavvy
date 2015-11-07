@@ -8,10 +8,7 @@ development:
 
   GITHUB_ACCESS_TOKEN: ""
 
-  REDIS_HOST: "127.0.0.1"
-  REDIS_PORT: "6379"
-  REDIS_DATABASE: "12"
-
+  REDIS_URL: "redis://127.0.0.1:6379/12"
 
 production:
   ACTIVEADMIN_USERNAME: ""
@@ -19,6 +16,4 @@ production:
 
   GITHUB_ACCESS_TOKEN: ""
 
-  REDIS_HOST: ""
-  REDIS_PORT: ""
-  REDIS_DATABASE: ""
+  REDIS_URL: ""
