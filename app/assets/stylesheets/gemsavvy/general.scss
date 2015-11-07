@@ -1,0 +1,9 @@
+.upload--gemfile {
+  .btn {
+    margin: 24px 0 0 0;
+  }
+  .error-block, .help-block {
+    color: $error-color;
+    padding: 3px;
+  }
+}

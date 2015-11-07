@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   mount Sidekiq::Web => '/sidekiq'
 
-  root to: 'groups#new'
+  root to: 'home#show'
 
   resources :groups, only: [:new, :create, :show] do
     resources :surveys, only: [:show], module: :groups do
