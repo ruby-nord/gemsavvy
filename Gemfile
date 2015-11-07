@@ -23,12 +23,17 @@ gem 'sidekiq',     '~> 3.5.3'
 gem 'simple_form', '~> 3.2.0'
 gem 'sinatra',     '~> 1.4.6', require: nil
 gem 'slim',        '~> 3.0.6'
-gem 'turbolinks',  '~> 2.5.3'
 
 # Assets gems
+source 'https://rails-assets.org' do
+  gem 'rails-assets-jquery', '2.1.4'
+  gem 'rails-assets-jquery-ujs', '1.1.0'
+  gem 'rails-assets-turbolinks', '2.4.1'
+  gem 'rails-assets-materialize', '0.97.1'
+  gem 'rails-assets-headroom.js', '0.7.0'
+end
+
 gem 'autoprefixer-rails', '~> 6.1.0'
-gem 'materialize-sass',   '~> 0.97.1'
-gem 'jquery-rails',       '~> 4.0.5'
 gem 'sass-rails',         '~> 5.0'
 gem 'uglifier',           '~> 2.7.2'
 

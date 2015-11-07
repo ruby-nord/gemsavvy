@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require materialize-sprockets
+//= require materialize
+//= require headroom.js/headroom
+//= require headroom.js/jQuery.headroom
 //= require gemsavvy
