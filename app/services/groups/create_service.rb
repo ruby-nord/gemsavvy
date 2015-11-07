@@ -24,7 +24,7 @@ module Groups
 
       model.save!
 
-      default_survey_service = Surveys::CreateDefaultService.new(model.id)
+      default_survey_service = ::Surveys::CreateDefaultService.new(model.id)
       default_survey_service.call
 
       model
