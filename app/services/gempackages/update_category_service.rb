@@ -1,5 +1,5 @@
 module Gempackages
-  class UpdateCategoryService
+  class UpdateCategoryService < BaseService
 
     private
 

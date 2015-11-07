@@ -1,5 +1,5 @@
 module Gempackages
-  class UpdateService
+  class UpdateService < BaseService
 
     private
 
@@ -12,9 +12,8 @@ module Gempackages
     end
 
     def call
-      Gempackages::UpdateCategoryJob.perform_later(id)
-      Gempackages::UpdateUrlsJob.perform_later(id)
+      perform_job(Gempackages::UpdateCategoryJob, id)
+      perform_job(Gempackages::UpdateUrlsJob, id)
     end
-
   end
 end
