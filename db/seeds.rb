@@ -43,24 +43,6 @@ red_miners_survey = red_miners.surveys.create!(
 
 ####################
 #
-# Gemfiles
-#
-####################
-
-rails_rumble_red_miners_gemfile = rails_rumble_survey.gemfiles.create!(
-  owner_name: 'Red Miners',
-  document:   File.readlines(Rails.root.join('Gemfile')).join
-)
-
-Dir[Rails.root.join('db/seeds/gemfiles/*.gemfile')].each_with_index do |filename, index|
-  red_miners_survey.gemfiles.create!(
-    owner_name: "Red Miners #{index + 1}",
-    document:   File.readlines(filename).join
-  )
-end
-
-####################
-#
 # Gempackages
 #
 ####################
@@ -74,4 +56,24 @@ gems_params.each do |gem_params|
   gempackage = Gempackage.new(gem_params)
   gempackage.category = Category.first_or_create!(name: category_name)
   gempackage.save
+end
+
+####################
+#
+# Gemfiles
+#
+####################
+
+rails_rumble_red_miners_gemfile = rails_rumble_survey.gemfiles.create!(
+  owner_name: 'Red Miners',
+  document:   File.readlines(Rails.root.join('Gemfile')).join
+)
+Gemfiles::ImportService.new(rails_rumble_red_miners_gemfile.id).call
+
+Dir[Rails.root.join('db/seeds/gemfiles/*.gemfile')].each_with_index do |filename, index|
+  gemfile = red_miners_survey.gemfiles.create!(
+    owner_name: "Red Miners #{index + 1}",
+    document:   File.readlines(filename).join
+  )
+  Gemfiles::ImportService.new(gemfile.id).call
 end

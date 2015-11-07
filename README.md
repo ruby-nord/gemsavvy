@@ -11,6 +11,7 @@
 $ bundle install
 $ cp config/application.yml.sample config/application.yml
 $ rake db:migrate
+$ rake db:seed
 ```
 
 ## Execution
