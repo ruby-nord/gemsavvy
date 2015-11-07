@@ -1,5 +1,6 @@
 module Gempackages
   class UpdateCategoryService < BaseService
+    RAILS_ASSETS_CATEGORY_NAME = 'Rails Assets'
 
     private
 
@@ -31,7 +32,13 @@ module Gempackages
     end
 
     def category_name
-      @category_name ||= Rails.application.config.ruby_toolbox.category(gempackage.name)
+      return @category_name if @category_name
+
+      if gempackage.name.starts_with?('rails-assets-')
+        @category_name = RAILS_ASSETS_CATEGORY_NAME
+      else
+        @category_name = Rails.application.config.ruby_toolbox.category(gempackage.name)
+      end
     end
 
     def gempackage
