@@ -3,3 +3,7 @@ admin:
 
 surveys:
   default_timespan_in_days: 30
+
+gempackages:
+  outsiders_stargazers_threshold: 200
+  outsiders_usage_percentage_threshold: 10
