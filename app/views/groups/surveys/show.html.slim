@@ -1,1 +1,53 @@
-h1 Upload your Gemfile on #{@survey.name}
+- content_for :before_javascripts do
+  = javascript_include_tag 'charts'
+
+div
+  = image_tag @context.group_logo
+
+  h4 = @context.group_name
+
+  - @context.when_group_has_website_url do
+    = link_to @context.group_website_url
+
+  p
+    => @context.gemfiles_count
+    ' members
+
+div
+  h1 = @context.survey_name
+
+  p = @context.survey_period
+
+h2 Per category
+
+- @context.each_stat_by_category do |category_stats|
+  div
+    h3 = category_stats.name
+    div
+      = pie_chart category_stats.chart_data
+      - category_stats.each_gempackage do |gempackage_stats|
+        ul
+          li = gempackage_stats.name
+          li = link_to gempackage_stats.url
+          li
+            => gempackage_stats.github_stars
+            'stargazers
+          li
+            => gempackage_stats.usage_count
+            'members
+
+h2 Outsiders
+
+- @context.each_outsider do |gempackage_stats|
+  ul
+    li
+      h3 = gempackage_stats.name
+    li = gempackage_stats.category_name
+    li = link_to gempackage_stats.url
+    li
+      => gempackage_stats.github_stars
+      'stargazers
+    li
+      / TODO: => gempackage_stats.usage_count
+      '13
+      'members

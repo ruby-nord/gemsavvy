@@ -4,6 +4,7 @@ ruby '2.2.3'
 
 gem 'activeadmin', github: 'activeadmin'
 gem 'carrierwave', '~> 0.10.0'
+gem 'chartkick',   '~> 1.4.1'
 gem 'cloudinary',  '~> 1.1.0'
 gem 'config',      '~> 1.0.0'
 gem 'figaro',      '~> 1.1.1'
@@ -43,6 +44,7 @@ group :development do
   gem 'pry-remote',         '~> 0.1.8'
   gem 'pry-stack_explorer', '~> 0.4.9'
   gem 'pry-byebug',         '~> 3.3.0'
+  gem 'quiet_assets',       '~> 1.1.0'
 end
 
 group :production do
