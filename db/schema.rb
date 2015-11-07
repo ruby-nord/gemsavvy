@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107004318) do
+ActiveRecord::Schema.define(version: 20151107013245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,24 @@ ActiveRecord::Schema.define(version: 20151107004318) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
+
+  create_table "create_gemfiles_gempackages", force: :cascade do |t|
+    t.integer  "gemfile_id"
+    t.integer  "gempackage_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "create_gemfiles_gempackages", ["gemfile_id"], name: "index_create_gemfiles_gempackages_on_gemfile_id", using: :btree
+  add_index "create_gemfiles_gempackages", ["gempackage_id"], name: "index_create_gemfiles_gempackages_on_gempackage_id", using: :btree
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -44,4 +62,60 @@ ActiveRecord::Schema.define(version: 20151107004318) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
+  create_table "gemfiles", force: :cascade do |t|
+    t.string   "owner_name"
+    t.text     "document"
+    t.integer  "survey_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "gemfiles", ["survey_id"], name: "index_gemfiles_on_survey_id", using: :btree
+
+  create_table "gempackages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "website_url"
+    t.string   "github_url"
+    t.string   "github_stars"
+    t.datetime "last_github_check_at"
+    t.datetime "last_rubygems_check_at"
+    t.datetime "last_ruby_toolbox_check_at"
+    t.integer  "category_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "gempackages", ["category_id"], name: "index_gempackages_on_category_id", using: :btree
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.string   "manager_email"
+    t.string   "manager_token"
+    t.string   "slug"
+    t.string   "website_url"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.date     "closing_on"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "surveys", ["code"], name: "index_surveys_on_code", unique: true, using: :btree
+  add_index "surveys", ["group_id"], name: "index_surveys_on_group_id", using: :btree
+
+  add_foreign_key "create_gemfiles_gempackages", "gemfiles"
+  add_foreign_key "create_gemfiles_gempackages", "gempackages"
+  add_foreign_key "gemfiles", "surveys"
+  add_foreign_key "gempackages", "categories"
+  add_foreign_key "surveys", "groups"
 end
