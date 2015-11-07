@@ -41,4 +41,5 @@ Rails.application.configure do
 
   config.ruby_toolbox = RubyToolbox::Mechanize.new
   config.github = Github::Octokit.new
+  config.rubygems = Rubygems::Gems.new
 end
