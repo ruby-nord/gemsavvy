@@ -60,6 +60,14 @@ h1, h2, h3, h4, h5 {
 .parallax {
   height: auto;
 }
+
+.sideicon {
+  text-align: center;
+  i {
+    font-size: 300px;
+    color: $gray;
+  }
+}
 #header-stats {
   background: image-url("gemsavvy-header-stats.jpg") $secondary-color;
   background-size: cover;
