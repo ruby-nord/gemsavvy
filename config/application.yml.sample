@@ -7,8 +7,6 @@ development:
   REDIS_PORT: "6379"
   REDIS_DATABASE: "12"
 production:
-  DATABASE_USERNAME: ""
-  DATABASE_PASSWORD: ""
   REDIS_HOST: ""
   REDIS_PORT: ""
   REDIS_DATABASE: ""
