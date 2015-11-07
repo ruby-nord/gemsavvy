@@ -1,6 +1,8 @@
 development:
   DATABASE_USERNAME: "postgres"
   DATABASE_PASSWORD: ""
+  DATABASE_HOST: "localhost"
+
 production:
   DATABASE_USERNAME: ""
   DATABASE_PASSWORD: ""
