@@ -89,6 +89,7 @@ GEM
       timers (>= 4.1.1)
     celluloid-supervision (0.20.5)
       timers (>= 4.1.1)
+    chartkick (1.4.1)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.7)
@@ -202,6 +203,8 @@ GEM
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
     puma (2.15.2)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -314,6 +317,7 @@ DEPENDENCIES
   activeadmin!
   autoprefixer-rails (~> 6.1.0)
   better_errors (~> 2.1.1)
+  chartkick (~> 1.4.1)
   config (~> 1.0.0)
   figaro (~> 1.1.1)
   foreman (~> 0.78.0)
@@ -330,6 +334,7 @@ DEPENDENCIES
   pry-remote (~> 0.1.8)
   pry-stack_explorer (~> 0.4.9)
   puma (~> 2.15.2)
+  quiet_assets (~> 1.1.0)
   rails (~> 4.2.4)
   rails_12factor
   redis (~> 3.2.1)

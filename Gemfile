@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.3'
 
 gem 'activeadmin', github: 'activeadmin'
+gem 'chartkick',   '~> 1.4.1'
 gem 'config',      '~> 1.0.0'
 gem 'figaro',      '~> 1.1.1'
 gem 'foreman',     '~> 0.78.0'
@@ -36,6 +37,7 @@ group :development do
   gem 'pry-remote',         '~> 0.1.8'
   gem 'pry-stack_explorer', '~> 0.4.9'
   gem 'pry-byebug',         '~> 3.3.0'
+  gem 'quiet_assets',       '~> 1.1.0'
 end
 
 group :production do
