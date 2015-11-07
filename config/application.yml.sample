@@ -6,6 +6,8 @@ development:
   DATABASE_PASSWORD: ""
   DATABASE_HOST: "localhost"
 
+  GITHUB_ACCESS_TOKEN: ""
+
   REDIS_HOST: "127.0.0.1"
   REDIS_PORT: "6379"
   REDIS_DATABASE: "12"
@@ -14,6 +16,8 @@ development:
 production:
   ACTIVEADMIN_USERNAME: ""
   ACTIVEADMIN_PASSWORD: ""
+
+  GITHUB_ACCESS_TOKEN: ""
 
   REDIS_HOST: ""
   REDIS_PORT: ""
