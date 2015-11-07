@@ -11,14 +11,14 @@ Gempackage.destroy_all
 rails_rumble = Group.create!(
   name:           'Rails Rumble',
   manager_email:  'support@railsrumble.com',
-  manager_token:  SecureRandom.hex(10),
+  manager_token:  'f9706ae6c647725847d3',
   website_url:    'http://railsrumble.com/'
 )
 
 red_miners = Group.create!(
   name:           'Red Miners',
   manager_email:  'hello@ruby-nord.org',
-  manager_token:  SecureRandom.hex(10),
+  manager_token:  'f9706ae6c647725847d3',
   website_url:    'http://gemsavvy.r15.railsrumble.com/'
 )
 
@@ -31,14 +31,14 @@ red_miners = Group.create!(
 rails_rumble_survey = rails_rumble.surveys.create!(
   name:         'Rails Rumble - Gem surveys 2015',
   description:  'Gemfiles Analysis of 2015 Rails Rumble participants',
-  code:         SecureRandom.hex(7),
+  code:         'd4059b37881b6e',
   closing_on:   '2015-11-30'
 )
 
 red_miners_survey = red_miners.surveys.create!(
   name:         'Red Miners - Gem surveys 2015',
   description:  'Curated gems found on Red Miners projects',
-  code:         SecureRandom.hex(7),
+  code:         '823b8ad1d2a28b',
   closing_on:   '2015-11-30'
 )
 
