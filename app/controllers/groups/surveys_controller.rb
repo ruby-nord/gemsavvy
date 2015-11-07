@@ -1,8 +1,7 @@
 module Groups
-  class SurveysController < ApplicationController
+  class SurveysController < Groups::BaseController
     def show
-      finder_service = Surveys::FinderService.new(params[:id], params[:group_id])
-      @survey = finder_service.call
+      @survey ||= ::Surveys::FindByCodeService.new(group.id, params[:survey_id]).call
     end
   end
 end

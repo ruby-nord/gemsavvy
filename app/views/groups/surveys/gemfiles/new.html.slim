@@ -1,0 +1,5 @@
+= simple_form_for @gemfile, url: group_survey_gemfiles_path do |form|
+  = form.input :owner_name
+  = form.input :document, as: :file
+
+  = form.button :submit, class: "btn-primary"
