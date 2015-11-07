@@ -7,8 +7,8 @@ categories:
 gempackages:
   by_category_threshold: 2
   outsiders_stargazers_threshold: 200
+  outsiders_threshold: 15
   outsiders_usage_percentage_threshold: 10
 
 surveys:
   default_timespan_in_days: 30
-

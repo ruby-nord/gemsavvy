@@ -17,6 +17,7 @@ module Gempackages
         .minimum_stargazers(Settings.gempackages.outsiders_stargazers_threshold)
         .merge(not_much_used_gems)
         .sort_by_top_stargazers
+        .limit(Settings.gempackages.outsiders_threshold)
     end
 
     private
