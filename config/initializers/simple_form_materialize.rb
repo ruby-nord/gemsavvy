@@ -24,16 +24,16 @@ SimpleForm.setup do |config|
     b.optional :readonly
 
     b.wrapper tag: 'div', class: 'btn' do |ba|
-      ba.use :span_gemfile
+      ba.use :span_file
       ba.use :input
     end
 
     b.wrapper tag: 'div', class: 'file-path-wrapper' do |ba|
-      ba.use :input, class: 'file-path validate', type: 'text'
+      ba.use :input, class: 'file-path validate', type: 'text', name: 'file_path'
     end
 
-      b.use :error, wrap_with: { tag: 'p', class: 'help-block' }
-      b.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
+    b.use :error, wrap_with: { tag: 'p', class: 'help-block' }
+    b.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
   end
 
   config.default_wrapper = :vertical_form
