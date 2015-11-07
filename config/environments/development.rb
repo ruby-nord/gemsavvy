@@ -40,4 +40,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.ruby_toolbox = RubyToolbox::Mechanize.new
+  config.github = Github::Octokit.new
 end
