@@ -26,6 +26,6 @@ class BaseQuery
   end
 
   module Scopes
-    # any new scope should be implemented there.
+    # any new scope should be implemented there in subclasses.
   end
 end
