@@ -1,3 +1,4 @@
+Category.destroy_all
 Group.destroy_all
 Gempackage.destroy_all
 
@@ -51,10 +52,12 @@ gems_json   = File.read(Rails.root.join('db/seeds/gems.json'))
 gems_params = JSON.parse(gems_json)
 
 gems_params.each do |gem_params|
-  category_name = gem_params.extract!('category_name')
+  category_name = gem_params.extract!('category_name').values.first
+  category      = Categories::FindOrCreateService.new(category_name).call
 
   gempackage = Gempackage.new(gem_params)
-  gempackage.category = Category.first_or_create!(name: category_name)
+  gempackage.category = category
+
   gempackage.save
 end
 
