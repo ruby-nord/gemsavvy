@@ -1,7 +1,7 @@
 default: &default
   adapter: postgresql
-  username: postgres
-  password:
+  username: <%= ENV.fetch('DATABASE_USERNAME') %>
+  password: <%= ENV.fetch('DATABASE_PASSWORD') %>
   pool: 5
   timeout: 5000
 
