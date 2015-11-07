@@ -1,0 +1,76 @@
+@media #{$small-and-down} {
+  .gemsavvy__survey {
+    .gemsavvy__survey--group {
+      padding: 1rem;
+      text-align: center;
+      .group--avatar {
+        img {
+          max-width: 200px;
+        }
+      }
+      .group--info {
+        text-align: center;
+        .group--info-name, h5 {
+          margin-bottom: 0;
+        }
+      }
+      .group--stats {
+        margin: 24px 0 24px 0;
+        font-size: 1.3rem;
+        .group--stats--info {
+          span {
+            margin-left: 0.5rem;
+          }
+          text-align: center;
+          .group--stats-number {
+            color: $primary-color;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .group--meta{
+      .group--meta-name {
+        color: $primary-color;
+      }
+      .group--meta-dates {
+        text-decoration: italic;
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .gemsavvy__survey {
+    .gemsavvy__survey--group {
+      .group--avatar {
+        min-width: 71px;
+        max-width: 100px;
+      }
+      padding: 2rem;
+      position: relative;
+      .group--info {
+        .group--info-name, h5 {
+          margin-bottom: 0;
+        }
+      }
+      .group--stats {
+        @include centered (false, true);
+        margin: 0;
+        right: 0;
+        font-size: 1.3rem;
+        .group--stats--info {
+          span {
+            margin-left: 0.5rem;
+          }
+          text-align: right;
+          .group--stats-number {
+            color: $primary-color;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+

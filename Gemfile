@@ -30,13 +30,13 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-jquery', '2.1.4'
   gem 'rails-assets-jquery-ujs', '1.1.0'
   gem 'rails-assets-turbolinks', '2.4.1'
-  gem 'rails-assets-materialize', '0.97.1'
   gem 'rails-assets-headroom.js', '0.7.0'
 end
 
 gem 'autoprefixer-rails', '~> 6.1.0'
 gem 'sass-rails',         '~> 5.0'
 gem 'uglifier',           '~> 2.7.2'
+gem 'materialize-sass',        '~> 0.97.1'
 
 group :development do
   gem 'better_errors',      '~> 2.1.1'
