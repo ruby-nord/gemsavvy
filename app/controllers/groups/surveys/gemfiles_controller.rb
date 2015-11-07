@@ -14,12 +14,16 @@ module Groups
 
         flash[:notice] = "Gemfile has been succesfully uploaded"
 
-        redirect_to group_survey_path(group.id, survey.id)
+        redirect_to group_survey_path(group, survey.code)
       rescue Errors::ValidationError => exception
         @gemfile = exception.context[:form]
 
-        flash[:alert] = 'We are not able to upload your Gemfile'
+        flash[:alert] = 'We were not able to upload your Gemfile'
         render :new
+      rescue Gemfiles::ClosedSurveyError => exception
+        flash[:alert] = exception.message
+
+        redirect_to group_survey_path(group, survey.code)
       end
 
     end

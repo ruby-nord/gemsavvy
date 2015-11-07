@@ -5,4 +5,8 @@ class Survey < ActiveRecord::Base
 
   has_many    :categories,  -> { distinct }, through: :gempackages
   has_many    :gempackages, -> { distinct }, through: :gemfiles
+
+  def closed?
+    closing_on < Date.current
+  end
 end

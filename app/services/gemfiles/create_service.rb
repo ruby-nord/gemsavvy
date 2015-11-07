@@ -3,18 +3,19 @@ module Gemfiles
 
     private
 
-    attr_reader :form_class, :params, :survey_code
+    attr_reader :form_class, :params, :survey_id
 
     public
 
-    def initialize(form_class, survey_code, params)
+    def initialize(form_class, survey_id, params)
       @form_class = form_class
       @params = params
-      @survey_code = survey_code
+      @survey_id = survey_id
     end
 
     def call
-      raise Errors::ValidationError.new({ form: form }) unless form.validate(params)
+      fail Gemfiles::ClosedSurveyError.new(survey) if survey.closed?
+      fail Errors::ValidationError.new({ form: form }) unless form.validate(params)
 
       form.sync
       gemfile.assign_attributes attributes
@@ -35,7 +36,7 @@ module Gemfiles
     end
 
     def survey
-      @survey ||= Survey.find_by(code: survey_code)
+      @survey ||= Survey.find(survey_id)
     end
 
     def gemfile
