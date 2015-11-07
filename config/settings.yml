@@ -1,2 +1,5 @@
+admin:
+  max_resources_listed: 250
+
 surveys:
   default_timespan_in_days: 30
