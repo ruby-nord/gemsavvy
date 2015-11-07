@@ -9,8 +9,7 @@ ActiveAdmin.register Gempackage do
     id_column
 
     column :name
-    column :website_url
-    column :github_url
+    column :category
     column :github_stars
 
     actions
