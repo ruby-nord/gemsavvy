@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20151107020916) do
   end
 
   add_index "groups", ["manager_token"], name: "index_groups_on_manager_token", using: :btree
+  add_index "groups", ["slug"], name: "index_groups_on_slug", unique: true, using: :btree
 
   create_table "surveys", force: :cascade do |t|
     t.string   "name"

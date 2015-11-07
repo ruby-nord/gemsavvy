@@ -5,6 +5,8 @@ module RubyToolbox
 
     def category(gem_name)
       page(gem_name).links_with(href: /categories\//, class: /icon-category/).first.text
+    rescue NoMethodError
+      nil
     end
 
     private

@@ -24,5 +24,7 @@ module Gemsavvy
     config.active_record.raise_in_transactional_callbacks = true
 
     config.generators.test_framework false
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end
