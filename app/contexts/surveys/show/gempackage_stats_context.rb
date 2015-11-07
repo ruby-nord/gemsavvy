@@ -10,7 +10,7 @@ module Surveys
 
       public
 
-      delegate :name,         to: :category, prefix: true
+      delegate :name,         to: :category, prefix: true, allow_nil: true
 
       delegate :github_stars, to: :stats
       delegate :name,         to: :stats
