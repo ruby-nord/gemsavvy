@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root to: 'groups#new'
 
-  resources :groups, only: [:new, :create] do
+  resources :groups, only: [:new, :create, :show] do
     resources :surveys, only: [:show], module: :groups do
       resources :gemfiles, only: [:new, :create], module: :surveys
     end

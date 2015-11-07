@@ -19,4 +19,8 @@ class GroupsController < ApplicationController
     flash[:alert] = 'We are not able to create your group'
     render :new
   end
+
+  def show
+    @group = Groups::FindFriendlyService.new(params[:id]).call
+  end
 end
