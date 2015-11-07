@@ -34,7 +34,7 @@ h2 Per category
   div
     h3 = category_stats.name
     div
-      = pie_chart category_stats.chart_data
+      = pie_chart group_survey_category_chart_path(@context.group_slug, @context.survey_code, category_stats.id)
       - category_stats.each_gempackage do |gempackage_stats|
         ul
           li = gempackage_stats.name

@@ -2,7 +2,7 @@ module Surveys
   module Stats
     class GenerateByCategoryService
 
-      Result = Struct.new(:name, :gempackages)
+      Result = Struct.new(:id, :name, :gempackages)
 
       private
 
@@ -16,7 +16,7 @@ module Surveys
       end
 
       def call
-        Result.new(category.name, gempackages)
+        Result.new(category.id, category.name, gempackages)
       end
 
       private

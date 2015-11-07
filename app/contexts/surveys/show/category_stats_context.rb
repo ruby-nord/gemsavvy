@@ -8,16 +8,11 @@ module Surveys
 
       public
 
+      delegate :id,   to: :stats
       delegate :name, to: :stats
 
       def initialize(stats)
         @stats = stats
-      end
-
-      def chart_data
-        stats.gempackages.each_with_object({}) do |gempackage, chart_data|
-          chart_data[gempackage.name] = gempackage.usage_count
-        end
       end
 
       def each_gempackage
