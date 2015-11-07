@@ -56,12 +56,12 @@ red_miners_survey = red_miners.surveys.create!(
 
 rails_rumble_red_miners_gemfile = rails_rumble_survey.gemfiles.create!(
   owner_name: 'Red Miners',
-  document:   File.readlines(Rails.root.join('Gemfile'))
+  document:   File.readlines(Rails.root.join('Gemfile')).join
 )
 
 Dir[Rails.root.join('db/seeds/gemfiles/*.gemfile')].each_with_index do |filename, index|
   red_miners_survey.gemfiles.create!(
     owner_name: "Red Miners #{index + 1}",
-    document:   File.readlines(filename)
+    document:   File.readlines(filename).join
   )
 end
