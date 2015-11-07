@@ -1,5 +1,6 @@
 module Categories
   class FindOrCreateService < BaseService
+    DEFAULT_NAME = 'Unknown'
 
     private
 
@@ -8,7 +9,7 @@ module Categories
     public
 
     def initialize(name)
-      @name = name
+      @name = name.presence || DEFAULT_NAME
     end
 
     def call
