@@ -1,12 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 Group.destroy_all
+Gempackage.destroy_all
 
 ####################
 #
@@ -64,4 +57,21 @@ Dir[Rails.root.join('db/seeds/gemfiles/*.gemfile')].each_with_index do |filename
     owner_name: "Red Miners #{index + 1}",
     document:   File.readlines(filename).join
   )
+end
+
+####################
+#
+# Gempackages
+#
+####################
+
+gems_json   = File.read(Rails.root.join('db/seeds/gems.json'))
+gems_params = JSON.parse(gems_json)
+
+gems_params.each do |gem_params|
+  category_name = gem_params.extract!('category_name')
+
+  gempackage = Gempackage.new(gem_params)
+  gempackage.category = Category.first_or_create!(name: category_name)
+  gempackage.save
 end
