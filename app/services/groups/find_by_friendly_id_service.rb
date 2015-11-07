@@ -1,5 +1,5 @@
 module Groups
-  class FindFriendlyService < BaseService
+  class FindByFriendlyIdService < BaseService
 
     private
 

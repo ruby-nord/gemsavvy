@@ -23,7 +23,7 @@ module Surveys
     private
 
     def group
-      @group ||= Groups::FindFriendlyService.new(group_id).call
+      @group ||= Groups::FindByFriendlyIdService.new(group_id).call
     end
   end
 end

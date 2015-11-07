@@ -21,6 +21,9 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Groups::FindFriendlyService.new(params[:id]).call
+    group = Groups::FindByFriendlyIdService.new(params[:id]).call
+    surveys = SurveyQuery.all.ordered_by_group(group)
+
+    @context = Groups::ShowContext.new(group, surveys)
   end
 end
