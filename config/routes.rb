@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
-  resources :groups, only: [:new, :create]
+  resources :groups, only: [:new, :create] do
+    resources :surveys, only: [:show], module: :groups
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
