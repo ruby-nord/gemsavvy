@@ -26,5 +26,7 @@ module Gemsavvy
     config.generators.test_framework false
 
     config.active_job.queue_adapter = :sidekiq
+
+    config.autoload_paths << Rails.root.join('lib')
   end
 end

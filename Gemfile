@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.3'
 
 gem 'activeadmin', github: 'activeadmin'
+gem 'config',      '~> 1.0.0'
 gem 'figaro',      '~> 1.1.1'
 gem 'foreman',     '~> 0.78.0'
 gem 'friendly_id', '~> 5.1.0'

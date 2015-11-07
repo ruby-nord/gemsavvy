@@ -104,8 +104,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    config (1.0.0)
+      activesupport (>= 3.0)
+      deep_merge (~> 1.0.0)
     connection_pool (2.2.0)
     debug_inspector (0.0.2)
+    deep_merge (1.0.1)
     disposable (0.1.14)
       representable (>= 2.2.3, < 3.0.0)
       uber
@@ -311,6 +315,7 @@ DEPENDENCIES
   autoprefixer-rails (~> 6.1.0)
   better_errors (~> 2.1.1)
   bootstrap-sass (~> 3.3.5)
+  config (~> 1.0.0)
   figaro (~> 1.1.1)
   font-awesome-sass (~> 4.4.0)
   foreman (~> 0.78.0)
