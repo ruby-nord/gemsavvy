@@ -12,3 +12,9 @@ $ bundle install
 $ cp config/application.yml.sample config/application.yml
 $ rake db:migrate
 ```
+
+## Execution
+
+```
+$ foreman start
+```
