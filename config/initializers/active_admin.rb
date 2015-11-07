@@ -145,9 +145,7 @@ ActiveAdmin.setup do |config|
   # config.before_filter :do_something_awesome
 
   config.before_filter do
-    authenticate_or_request_with_http_basic('admin') do |name, password|
-      name == ENV.fetch('ACTIVEADMIN_USERNAME') && password == ENV.fetch('ACTIVEADMIN_PASSWORD')
-    end
+    authenticate_or_request_with_http_basic('admin', &Routes::Constraints::Authentication.new.method(:matches?))
   end
 
   # == Localize Date/Time Format

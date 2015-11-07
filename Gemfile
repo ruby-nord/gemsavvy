@@ -18,7 +18,7 @@ gem 'redis',       '~> 3.2.1'
 gem 'reform',      '~> 2.0.5'
 gem 'sidekiq',     '~> 3.5.3'
 gem 'simple_form', '~> 3.2.0'
-gem 'sinatra',     '~> 1.4.6'
+gem 'sinatra',     '~> 1.4.6', require: nil
 gem 'slim',        '~> 3.0.6'
 gem 'turbolinks',  '~> 2.5.3'
 
