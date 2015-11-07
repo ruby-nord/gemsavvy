@@ -1,5 +1,5 @@
 module Gempackages
-  class UpdateGithubStarsService
+  class UpdateGithubStarsService < BaseService
 
     private
 

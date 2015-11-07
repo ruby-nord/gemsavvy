@@ -1,5 +1,5 @@
 module Gempackages
-  class UpdateUrlsService
+  class UpdateUrlsService < BaseService
 
     GITHUB_HOST = 'github.com'
 
@@ -19,7 +19,7 @@ module Gempackages
       gempackage.assign_attributes attributes
       gempackage.save!
 
-      Gempackages::UpdateGithubStarsJob.perform_later(id) if github_url.present?
+      perform_job(Gempackages::UpdateGithubStarsJob, id) if github_url.present?
 
       gempackage
     end

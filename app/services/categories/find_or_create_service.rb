@@ -1,5 +1,5 @@
 module Categories
-  class FindOrCreateService
+  class FindOrCreateService < BaseService
 
     private
 
