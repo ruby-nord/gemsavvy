@@ -36,3 +36,7 @@ group :development do
   gem 'pry-stack_explorer', '~> 0.4.9'
   gem 'pry-byebug',         '~> 3.3.0'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
