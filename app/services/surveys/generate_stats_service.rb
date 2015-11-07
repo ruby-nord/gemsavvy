@@ -20,7 +20,7 @@ module Surveys
     private
 
     def all_categories
-      sorted_categories.each_with_object([]) do |category, categories_stats|
+      sorted_known_categories.each_with_object([]) do |category, categories_stats|
         category_stats = Surveys::Stats::GenerateByCategoryService.new(survey_id, category.id).call
 
         if category_stats.gempackages.to_a.any?
@@ -33,8 +33,8 @@ module Surveys
       Gempackages::FindAllOutsidersForSurveyService.new(survey_id).call
     end
 
-    def sorted_categories
-      CategoryQuery.all(survey.categories).order_by_name
+    def sorted_known_categories
+      CategoryQuery.all(survey.categories).known.order_by_name
     end
 
     def survey
