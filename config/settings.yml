@@ -11,5 +11,14 @@ gempackages:
   outsiders_max_threshold: 50
   outsiders_usage_percentage_threshold: 10
 
+meta_tags:
+  description: |
+    Our purpose is to provide a simple tool that enables local Ruby
+    communities to compare the gems they're using & discover new ones.
+  image: gemsavvy-meta
+  title: gemsavvy - Share your jewels with your community
+  twitter_account: _rubynord
+
 surveys:
   default_timespan_in_days: 30
+
