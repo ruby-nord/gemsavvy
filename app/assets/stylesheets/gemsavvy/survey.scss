@@ -64,6 +64,44 @@
         }
       }
     }
+    .gemsavvy__survey--outsiders {
+      .card-title {
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+      .card-content {
+        padding: 1rem 0 0 1rem;
+        &:hover {
+          background: $white;
+        }
+        p {
+          clear: both;
+        }
+      }
+      .collection {
+        border: none;
+        .collection-item{
+          padding: .5rem 0 0 0;
+          border: none;
+          .title {
+            font-size: 1.5rem;
+            font-weight: normal;
+          }
+          .link {
+            font-weight: light;
+          }
+          .icon {
+            margin: 0 1rem 0 0;
+          }
+          .category-numbers {
+            color: $primary-color;
+          }
+          .last-item {
+            padding-bottom: 1rem;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -143,7 +181,7 @@
         border: none;
         .collection-item{
           padding: .5rem 0 0 0;
-          border-bottom: 1px solid $gray;
+          border: none;
           .title {
             font-size: 1.5rem;
             font-weight: normal;
