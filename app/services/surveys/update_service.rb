@@ -9,13 +9,14 @@ module Surveys
 
     def initialize(form_class, survey_id, params)
       @form_class = form_class
-      @survey_id = survey_id
-      @params = params
+      @survey_id  = survey_id
+      @params     = params
     end
 
     def call
       raise Errors::ValidationError.new({ form: form }) unless form.validate(params)
 
+      form.sync
       form.save!
 
       survey
