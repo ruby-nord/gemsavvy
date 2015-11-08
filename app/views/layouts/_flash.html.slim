@@ -1,0 +1,6 @@
+- flash.each do |type, message|
+  div class="card card-flash #{flash_type_to_class_names(type)}"
+    div class="container"
+      div class="card-content white-text"
+        span class="card-title" = flash_type_to_title(type)
+        p = message
