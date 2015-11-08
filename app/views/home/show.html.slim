@@ -1,26 +1,27 @@
-.gemsavvy__masthead.parallax-container.white-text
+.gemsavvy__masthead.white-text
   .section
     .row
-      .col.s12.m6.l6.hide-on-small-only
-        = image_tag 'survey-preview.jpg', alt: 'Survey preview'
-      .col.s12.m6.l6.gemsavvy__masthead-info.center
-        = image_tag 'gemsavvy-logo.svg', alt: "gemsavvy"
-        h1.gemsavvy__masthead-info--title
-          | Share your jewels with your community
-        .row
-          h5.gemsavvy__masthead-info--sub-title.col.s12.flow-text Compare your Gemfile with your community and discover trending gems
-        .row
-          = link_to new_group_path, id: 'download-button', class: 'btn-large waves-effect waves-light' do
-            | Create your Community
-            i.material-icons.right group_add
-  .parallax
+      .container
+        .col.s12.m6.l6.hide-on-med-and-down.masthead-preview
+          = image_tag 'survey-preview.png', alt: 'Survey preview'
+        .col.s12.l6.gemsavvy__masthead-info.center
+          = image_tag 'gemsavvy-logo.svg', alt: "gemsavvy"
+          h1.gemsavvy__masthead-info--title
+            | Share your jewels with your community
+          .row
+            h5.gemsavvy__masthead-info--sub-title.col.s12.flow-text Compare your Gemfile with your community and discover trending gems
+          .row
+            = link_to new_group_path, id: 'download-button', class: 'btn btn-large waves-effect waves-light' do
+              | Create your Community
+              i.material-icons.right group_add
 
-.container
+.row
   #home-info.row.grey.lighten-4
     .container
       .row.center
         .col.s12.m6
           .icon-block
+            i.material-icons.large accessibility
             h5.center.flow-text Blissfully Simple
             p.light
               | To create a survey of your precious gems, simply 
@@ -28,6 +29,7 @@
                 The more Gemfiles you raise, the more accurate your survey will be.
         .col.s12.m6
           .icon-block
+            i.material-icons.large security
             h5.center.flow-text Safe & Anonymous
             p.light
               | Private gems won't be tracked by our system.
@@ -36,7 +38,7 @@
                 We'll never provide access to a member gemfile. All your gems stay private.
 .container
   .section
-    .row
+    .row.center
       .col.m4
         h4.flow-text Crystalline Charts
         = image_tag 'survey-chart.png', alt: 'Survey chart'
@@ -55,20 +57,20 @@
         = image_tag 'survey-outsider.png', alt: 'Survey gems overview'
         p.left-align.light
           | Find out which gems a pretty famous on Github but only used by a small bunch of nerdies from your group.
-#header-stats.row
+#footer-stats.row
   .container
     .row
       h4.center Global stats
     .row
       .col.s6.m3.center
         | Groups
-        h5 = @context.groups_count
+        h5.stats-count = @context.groups_count
       .col.s6.m3.center
         | Surveys
-        h5 = @context.surveys_count
+        h5.stats-count = @context.surveys_count
       .col.s6.m3.center
         | Gemfiles
-        h5 = @context.gemfiles_count
+        h5.stats-count = @context.gemfiles_count
       .col.s6.m3.center
         | Gems
-        h5 = @context.gempackages_count
+        h5.stats-count = @context.gempackages_count
