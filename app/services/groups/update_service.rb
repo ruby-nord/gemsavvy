@@ -16,6 +16,7 @@ module Groups
     def call
       raise Errors::ValidationError.new({ form: form }) unless form.validate(params)
 
+      form.sync
       form.save!
 
       group

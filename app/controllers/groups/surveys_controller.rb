@@ -41,7 +41,7 @@ module Groups
       @context = ::Surveys::ActionContext.new(group, exception.context[:form])
 
       flash[:alert] = 'We were not able to update your survey'
-      render :new
+      render :edit
     end
 
     private
