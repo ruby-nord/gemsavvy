@@ -334,6 +334,7 @@ DEPENDENCIES
   activeadmin!
   autoprefixer-rails (~> 6.1.0)
   better_errors (~> 2.1.1)
+  bundler (~> 1.10.6)
   carrierwave (~> 0.10.0)
   chartkick (~> 1.4.1)
   cloudinary (~> 1.1.0)

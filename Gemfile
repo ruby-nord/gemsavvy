@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.3'
 
 gem 'activeadmin', github: 'activeadmin'
+gem 'bundler', '~> 1.10.6'
 gem 'carrierwave',     '~> 0.10.0'
 gem 'chartkick',       '~> 1.4.1'
 gem 'cloudinary',      '~> 1.1.0'

@@ -1,3 +1,5 @@
+require 'bundler'
+
 class GemfileForm < Reform::Form
   property :owner_name
   property :document, virtual: true
