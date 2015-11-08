@@ -56,3 +56,19 @@ img {
     color: $gray;
   }
 }
+
+@media #{$small-and-down} {
+  #home-info {
+    .flow-text {
+      font-size: 2.5rem
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .gemsavvy__survey--outsiders {
+    .card {
+     min-height: 205px;
+   }
+ }
+}
