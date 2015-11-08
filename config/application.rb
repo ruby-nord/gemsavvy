@@ -28,7 +28,5 @@ module Gemsavvy
     config.active_job.queue_adapter = :sidekiq
 
     config.autoload_paths << Rails.root.join('lib')
-
-    config.middleware.insert_before ActionDispatch::Static, Rack::Cors
   end
 end
