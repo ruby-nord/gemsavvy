@@ -9,13 +9,13 @@ class GroupsController < ApplicationController
     group_creation = Groups::CreateService.new(GroupForm, params[:group])
     group          = group_creation.call
 
-    flash[:notice] = "Group #{group.name} has been succesfully created"
+    flash[:notice] = "Community #{group.name} has been succesfully created"
 
     redirect_to group_path(group, token: group.manager_token)
   rescue Errors::ValidationError => exception
     @group = exception.context[:form]
 
-    flash.now[:alert] = 'We were not able to create your group'
+    flash.now[:alert] = 'We were not able to create your community'
     render :new
   end
 
@@ -32,13 +32,13 @@ class GroupsController < ApplicationController
     group_update = Groups::UpdateService.new(GroupForm, group.id, params[:group])
     group = group_update.call
 
-    flash[:notice] = "Group #{group.name} has been succesfully updated"
+    flash[:notice] = "Community #{group.name} has been succesfully updated"
 
     redirect_to group_path(group, token: params[:token])
   rescue Errors::ValidationError => exception
     @group = exception.context[:form]
 
-    flash.now[:alert] = 'We were not able to update your group'
+    flash.now[:alert] = 'We were not able to update your community'
     render :new
   end
 
