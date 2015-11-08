@@ -1,23 +1,23 @@
 title = Settings.meta_tags.title
-meta name="description" content=Settings.meta_tags.description
+meta name="description" content=Settings.meta_tags.short_description
 
 / Facebook Open Graph data
 meta property="og:title" content=Settings.meta_tags.title
 meta property="og:type" content="website"
 meta property="og:url" content=request.original_url
 meta property="og:image" content=image_url(Settings.meta_tags.image)
-meta property="og:description" content=Settings.meta_tags.description
+meta property="og:description" content=Settings.meta_tags.long_description
 meta property="og:site_name" content=Settings.meta_tags.title
 
 / Twitter Card data
 meta name="twitter:card" content="summary_large_image"
 meta name="twitter:site" content=Settings.meta_tags.twitter_account
 meta name="twitter:title" content=Settings.meta_tags.title
-meta name="twitter:description" content=Settings.meta_tags.description
+meta name="twitter:description" content=Settings.meta_tags.long_description
 meta name="twitter:creator" content=Settings.meta_tags.twitter_account
 meta name="twitter:image:src" content=image_url(Settings.meta_tags.image)
 
 / Google+ Schema.org markup
 meta itemprop="name" content=Settings.meta_tags.title
-meta itemprop="description" content=Settings.meta_tags.description
+meta itemprop="description" content=Settings.meta_tags.long_description
 meta itemprop="image" content=image_url(Settings.meta_tags.image)
