@@ -19,45 +19,80 @@
           span.group--stats-number = @context.gemfiles_count
           span Gemfiles
         .col.s6.m12.group--stats--info
-          span.group--stats-number 16
-          span Members
+          a.waves-effect.waves-grey href="#!"
+            span Share
+            i.material-icons.right share
 
   .col.s12.grey.lighten-4.center.group--meta
     .container
       h4.group--meta-name = @context.survey_name
       h5.group--meta-dates = @context.survey_period
+  
+  .container
+    .row.gemsavvy__survey--categories
+      .col.s12.
+        h4.center Per category
 
+      - @context.each_stat_by_category do |category_stats|
+        .col.s12.l6
+          .card
+            .card-image.waves-effect.waves-block.waves-light
+              span.activator
+                = pie_chart category_stats.chart_data
 
-h2 Per category
+            .card-content
+              span.card-title.activator.grey-text.text-darken-4.truncate
+                = category_stats.name
+                i.material-icons.right more_vert
+            .card-reveal
+              span.card-title.grey-text.text-darken-4.truncate
+                = category_stats.name
+                i.material-icons.right close
 
-- @context.each_stat_by_category do |category_stats|
-  div
-    h3 = category_stats.name
-    div
-      = pie_chart category_stats.chart_data
-      - category_stats.each_gempackage do |gempackage_stats|
-        ul
-          li = gempackage_stats.name
-          li = link_to gempackage_stats.url
-          li
-            => gempackage_stats.github_stars
-            'stargazers
-          li
-            => gempackage_stats.usage_count
-            'members
+              ul.collection
+                - category_stats.each_gempackage do |gempackage_stats|           
+                  li.collection-item
+                    span.title = gempackage_stats.name
+                    p.link = link_to gempackage_stats.url
+                    p
+                      span
+                        i.material-icons.left group
+                      span.category-numbers 
+                        => gempackage_stats.usage_count
+                      span
+                        'members
+                    p
+                      span
+                        i.material-icons.left grade 
+                      span.category-numbers
+                        => gempackage_stats.github_stars
+                      span
+                        'stargazers
+  .container
+    .row.gemsavvy__survey--outsiders
+      .col.s12.
+        h4.center Outsiders
 
-h2 Outsiders
-
-- @context.each_outsider do |gempackage_stats|
-  ul
-    li
-      h3 = gempackage_stats.name
-    li = gempackage_stats.category_name
-    li = link_to gempackage_stats.url
-    li
-      => gempackage_stats.github_stars
-      'stargazers
-    li
-      / TODO: => gempackage_stats.usage_count
-      '13
-      'members
+      .col.s12.l6
+        .card
+          - @context.each_outsider do |gempackage_stats|
+            .card-content
+              span.card-title.grey-text.text-darken-4.truncate = gempackage_stats.name
+              ul.collection
+                li.collection-item
+                  p = gempackage_stats.category_name
+                  p.link = link_to gempackage_stats.url
+                  p
+                    span.icon.left
+                      i.material-icons group
+                    span.category-numbers 
+                      / TO BE FIXED => gempackage_stats.usage_count
+                    span
+                      'members
+                  p.last-item
+                    span.icon.left
+                      i.material-icons grade 
+                    span.category-numbers
+                      => gempackage_stats.github_stars
+                    span
+                      'stargazers

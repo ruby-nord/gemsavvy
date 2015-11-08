@@ -37,6 +37,33 @@
         text-decoration: italic;
       }
     }
+    .gemsavvy__survey--categories {
+      .card-title {
+        font-size: 1.5rem;
+      }
+      .card-content {
+        &:hover {
+          background: $gray;
+        }
+      }
+      .collection {
+        border: none;
+        .collection-item{
+          padding: 6px 0 0 0;
+          border-bottom: 1px solid $gray;
+          .title {
+            font-size: 1.5rem;
+            font-weight: normal;
+          }
+          .link {
+            font-weight: light;
+          }
+          .category-numbers {
+            color: $primary-color;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -67,6 +94,71 @@
           .group--stats-number {
             color: $primary-color;
             font-weight: bold;
+          }
+        }
+      }
+    }
+    .gemsavvy__survey--categories {
+      .card-title {
+        font-size: 1.5rem;
+      }
+      .card-content {
+        &:hover {
+          background: $gray;
+        }
+      }
+      .collection {
+        border: none;
+        .collection-item{
+          padding: 6px 0 0 0;
+          border-bottom: 1px solid $gray;
+          .title {
+            font-size: 1.5rem;
+            font-weight: normal;
+          }
+          .link {
+            font-weight: light;
+          }
+          .category-numbers {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+    .gemsavvy__survey--outsiders {
+      .card-title {
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+      .card-content {
+        padding: 1rem 0 0 1rem;
+        &:hover {
+          background: $white;
+        }
+        p {
+          clear: both;
+        }
+      }
+      .collection {
+        border: none;
+        .collection-item{
+          padding: .5rem 0 0 0;
+          border-bottom: 1px solid $gray;
+          .title {
+            font-size: 1.5rem;
+            font-weight: normal;
+          }
+          .link {
+            font-weight: light;
+          }
+          .icon {
+            margin: 0 1rem 0 0;
+          }
+          .category-numbers {
+            color: $primary-color;
+          }
+          .last-item {
+            padding-bottom: 1rem;
           }
         }
       }
