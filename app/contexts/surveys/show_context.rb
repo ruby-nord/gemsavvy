@@ -12,7 +12,7 @@ module Surveys
 
     delegate  :count,       to: :gemfiles,  prefix: true
 
-    delegate  :logo,        to: :group,     prefix: true
+    delegate  :logo_url,    to: :group,     prefix: true
     delegate  :name,        to: :group,     prefix: true
     delegate  :slug,        to: :group,     prefix: true
     delegate  :website_url, to: :group,     prefix: true
