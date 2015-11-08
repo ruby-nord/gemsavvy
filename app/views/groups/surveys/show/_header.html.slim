@@ -14,14 +14,14 @@
       .col.s6.m12.group--stats--info
         span.group--stats-number = context.gemfiles_count
         span = 'Member'.pluralize(context.gemfiles_count)
+      - context.when_is_closed do
+        .col.s6.m12.group--stats--info
+          span Closed survey
       .col.s6.m12.group--stats--info
         = link_to('#', :'data-clipboard-text' => group_survey_url(context.group_slug, context.survey_code),
           class: 'btn copy-clipboard-js') do
             | Share
             i.material-icons.right share
-      - context.when_is_closed do
-        .col.s6.m12.group--stats--info
-          span Closed survey
 
 .col.s12.grey.lighten-4.center.group--meta
   .container
