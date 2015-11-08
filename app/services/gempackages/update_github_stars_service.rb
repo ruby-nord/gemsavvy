@@ -18,8 +18,6 @@ module Gempackages
       gempackage.save!
 
       gempackage
-    rescue Octokit::NotFound, Octokit::InvalidRepository
-      # we can't do anything about this
     end
 
     private
