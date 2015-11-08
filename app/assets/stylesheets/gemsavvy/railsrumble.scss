@@ -4,14 +4,18 @@ $rails-rumble-btn-bg-color: #FFFFAA;
 $rails-rumble-btn-color:    #000000;
 
 .gemsavvy__rails-rumble-banner {
-  background:   $rails-rumble-bg-color;
-  color:        $rails-rumble-color;
-  padding-top:  1em;
+  background: $rails-rumble-bg-color;
+  color:      $rails-rumble-color;
+  padding:    1em 0;
 
   .btn-primary {
     background: $rails-rumble-btn-bg-color;
     color:      $rails-rumble-btn-color;
     margin-top: 1em;
+  }
+
+  .row {
+    margin-bottom: 0;
   }
 
   @media #{$small-and-down} {
