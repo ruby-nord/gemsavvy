@@ -80,6 +80,6 @@
           |
             Gems which have a rising number of stars on GitHub. These gems are only used by few people in your community.
     - @context.when_has_outsiders do
-      = render partial: "groups/surveys/outsiders", locals: { context: @context }
+      = render "groups/surveys/outsiders", context: @context
     - @context.when_has_no_outsiders do
-      = render partial: "groups/surveys/no_outsiders", locals: { context: @context }
+      = render "groups/surveys/no_outsiders", context: @context

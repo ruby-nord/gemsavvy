@@ -10,17 +10,25 @@ module Surveys
 
     public
 
-    delegate  :count,       to: :gemfiles,  prefix: true
+    delegate :count,       to: :gemfiles,  prefix: true
 
-    delegate  :id,          to: :group,     prefix: true
-    delegate  :logo_url,    to: :group,     prefix: true
-    delegate  :name,        to: :group,     prefix: true
-    delegate  :slug,        to: :group,     prefix: true
-    delegate  :website_url, to: :group,     prefix: true
+    delegate :id,          to: :group,     prefix: true
+    delegate :logo_url,    to: :group,     prefix: true
+    delegate :name,        to: :group,     prefix: true
+    delegate :slug,        to: :group,     prefix: true
+    delegate :website_url, to: :group,     prefix: true
 
-    delegate  :description, to: :survey,    prefix: true
-    delegate  :code,        to: :survey,    prefix: true
-    delegate  :name,        to: :survey,    prefix: true
+    delegate :when_group_has_website_url, to: :group_presenter
+
+    delegate :description, to: :survey,           prefix: true
+    delegate :code,        to: :survey,           prefix: true
+    delegate :name,        to: :survey,           prefix: true
+    delegate :period,      to: :survey_presenter, prefix: :survey
+
+    delegate :when_has_survey_description, to: :survey_presenter
+
+    delegate :when_has_no_outsiders, to: :stats_presenter
+    delegate :when_has_outsiders,    to: :stats_presenter
 
     def initialize(survey, stats)
       @survey = survey
@@ -39,33 +47,18 @@ module Surveys
       end
     end
 
-    def survey_period
-      opening_on = I18n.l(survey.created_at.to_date, format: :long)
-      closing_on = I18n.l(survey.closing_on, format: :long)
-
-      "#{opening_on} - #{closing_on}"
-    end
-
-    def when_group_has_website_url(&block)
-      block.call if group.website_url
-    end
-
-    def when_has_no_outsiders(&block)
-      block.call unless has_oustiders?
-    end
-
-    def when_has_outsiders(&block)
-      block.call if has_oustiders?
-    end
-
-    def when_has_survey_description(&block)
-      block.call if survey_description
-    end
-
     private
 
-    def has_oustiders?
-      stats.outsiders.present?
+    def group_presenter
+      @group_presenter ||= GroupPresenter.new(group)
+    end
+
+    def stats_presenter
+      @stats_presenter ||= StatsPresenter.new(stats)
+    end
+
+    def survey_presenter
+      @survey_presenter ||= SurveyPresenter.new(survey)
     end
   end
 end

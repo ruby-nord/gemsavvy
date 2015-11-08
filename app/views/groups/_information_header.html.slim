@@ -1,0 +1,12 @@
+.row.gemsavvy__survey
+  .container
+    .col.s12.gemsavvy__survey--group
+      .col.s12.m8.l10
+        .col.s12.m3.l2.group--avatar
+          = image_tag context.group_logo_url, class: "responsive-img circle"
+
+        .col.s12.m9.l10.group--info
+          h5.group--info-name = context.group_name
+          span
+            - context.when_group_has_website_url do
+              = link_to context.group_website_url, context.group_website_url, class: "flow-text", target: "_blank"
