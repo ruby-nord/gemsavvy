@@ -17,7 +17,7 @@
       .col.s12.m4.l3.group--stats.grey-text.light-font
         .col.s6.m12.group--stats--info
           span.group--stats-number = @context.gemfiles_count
-          span = pluralize(@context.gemfiles_count, 'Member')
+          span = 'Member'.pluralize(@context.gemfiles_count)
         .col.s6.m12.group--stats--info
           a.waves-effect.waves-grey href="#!"
             span Share
@@ -60,14 +60,14 @@
                       span.category-numbers
                         => gempackage_stats.usage_count
                       span
-                        => pluralize(gempackage_stats.usage_count, 'member')
+                        => 'member'.pluralize(gempackage_stats.usage_count)
                     p
                       span
                         i.material-icons.left grade
                       span.category-numbers
                         => gempackage_stats.github_stars
                       span
-                        => pluralize(gempackage_stats.github_stars, 'stargazer')
+                        => 'stargazer'.pluralize(gempackage_stats.github_stars)
   .container
     .row.gemsavvy__survey--outsiders
       .col.s12
@@ -88,11 +88,11 @@
                       span.category-numbers
                         => gempackage_stats.usage_count
                       span
-                        => pluralize(gempackage_stats.usage_count, 'member')
+                        => 'member'.pluralize(gempackage_stats.usage_count)
                     p.last-item
                       span.icon.left
                         i.material-icons grade
                       span.category-numbers
                         => gempackage_stats.github_stars
                       span
-                        => pluralize(gempackage_stats.github_stars, 'stargazer')
+                        => 'stargazer'.pluralize(gempackage_stats.github_stars)
