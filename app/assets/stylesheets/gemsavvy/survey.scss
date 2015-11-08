@@ -107,6 +107,20 @@
 
 @media #{$medium-and-up} {
   .gemsavvy__survey {
+    &.import-gemfile {
+      padding-bottom: 30px;
+      .gemsavvy__survey--group {
+        padding-bottom: 1rem;
+        .group--stats {
+          position: relative;
+          top: auto;
+          transform: none;
+        }
+      }
+      .group--info-name {
+        margin-top: 0px;
+      }
+    }
     .gemsavvy__survey--group {
       .group--avatar {
         min-width: 71px;

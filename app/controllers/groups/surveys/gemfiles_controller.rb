@@ -9,7 +9,8 @@ module Groups
       def new
         fail Gemfiles::ClosedSurveyError.new(survey) if survey.closed?
 
-        @gemfile = GemfileForm.new(Gemfile.new)
+        gemfile  = GemfileForm.new(Gemfile.new)
+        @context = ::Gemfiles::ActionContext.new(gemfile, survey)
       end
 
       def create
@@ -20,7 +21,8 @@ module Groups
 
         redirect_to group_survey_path(group, survey.code)
       rescue Errors::ValidationError => exception
-        @gemfile = exception.context[:form]
+        gemfile = exception.context[:form]
+        @context = ::Gemfiles::ActionContext.new(gemfile, survey)
 
         flash[:alert] = 'We were not able to upload your Gemfile'
         render :new
