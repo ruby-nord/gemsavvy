@@ -1,8 +1,6 @@
 doctype html
 html
   head
-    link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
-
     meta content="width=device-width, initial-scale=1.0" name="viewport"
 
     = render 'layouts/meta_tags'
@@ -10,6 +8,7 @@ html
     = yield :before_javascripts
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
   body
     = render 'layouts/header'
     main
