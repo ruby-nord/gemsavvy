@@ -7,7 +7,7 @@ module RubyToolbox
       page(gem_name).links_with(href: /categories\//, class: /icon-category/).first.text
     rescue NoMethodError
       nil
-    rescue Mechanize::ResponseCodeError => exception
+    rescue ::Mechanize::ResponseCodeError => exception
       raise exception if exception.response_code != '404'
     end
 
