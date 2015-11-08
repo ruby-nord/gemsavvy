@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   private
 
   def authorize!
-    fail Errors::UnauthorizedError if group.manager_token != params[:token]
+    Groups::AuthenticateService.new(group.id, params[:token]).call
   end
 
   def render_not_found
