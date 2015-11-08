@@ -1,7 +1,8 @@
  $(document).ready(function(){
   $('.parallax').parallax();
-  $(".button-collapse").sideNav();
-  $("#header").headroom();
+  $('.button-collapse').sideNav();
+  $('#header').headroom();
+  $('.datepicker').pickadate();
 
   function addTooltip(elem, msg) {
     elem.setAttribute('class', 'btn copy-clipboard-js tooltipped');
