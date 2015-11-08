@@ -13,4 +13,20 @@ $rails-rumble-btn-color:    #000000;
     color:      $rails-rumble-btn-color;
     margin-top: 1em;
   }
+
+  @media #{$small-and-down} {
+    .callout, .logo {
+      text-align: center;
+    }
+
+    .logo img {
+      width: 50%;
+    }
+  }
+
+  @media #{$large-and-up} {
+    .callout {
+      text-align: right;
+    }
+  }
 }
