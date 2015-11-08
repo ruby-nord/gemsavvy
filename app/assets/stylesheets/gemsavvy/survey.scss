@@ -226,3 +226,17 @@
   }
 }
 
+.gemsavvy__demo_survey {
+  p {
+    font-size:  11px;
+    font-style: italic;
+    margin-top: 5px;
+  }
+  .btn {
+    background:  $primary-color;
+    color:       $white;
+    font-size:   20px;
+    height:      60px;
+    line-height: 60px;
+  }
+}
