@@ -7,8 +7,13 @@ class GempackageQuery < BaseQuery
     end
 
     def by_survey_id(survey_id)
-      joins(gemfiles: :survey)
+      joins(:gemfiles)
         .where(gemfiles: { survey_id: survey_id })
+    end
+
+    def select_usage_count
+      select('gempackages.*, count(*) as usage_count')
+        .group('gempackages.id')
     end
   end
 end

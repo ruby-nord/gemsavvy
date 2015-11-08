@@ -12,7 +12,7 @@
           h5.group--info-name = @context.group_name
           span
             - @context.when_group_has_website_url do
-              = link_to @context.group_website_url, class: "flow-text"
+              = link_to @context.group_website_url, @context.group_website_url, class: "flow-text", target: "_blank"
 
       .col.s12.m4.l3.group--stats.grey-text.light-font
         .col.s6.m12.group--stats--info
@@ -53,7 +53,7 @@
                 - category_stats.each_gempackage do |gempackage_stats|
                   li.collection-item
                     span.title = gempackage_stats.name
-                    p.link = link_to gempackage_stats.url
+                    p.link = link_to gempackage_stats.url, gempackage_stats.url, target: "_blank"
                     p
                       span
                         i.material-icons.left group
@@ -81,7 +81,7 @@
                 ul.collection
                   li.collection-item
                     p = gempackage_stats.category_name
-                    p.link = link_to gempackage_stats.url
+                    p.link = link_to gempackage_stats.url, gempackage_stats.url, target: "_blank"
                     p
                       span.icon.left
                         i.material-icons group
