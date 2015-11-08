@@ -252,3 +252,11 @@
     line-height: 60px;
   }
 }
+
+textarea {
+  height: 100px;
+}
+
+label.text.active {
+  transform: translateY(-190%);
+}

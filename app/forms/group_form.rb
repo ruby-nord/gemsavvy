@@ -8,9 +8,8 @@ class GroupForm < Reform::Form
 
   validates :manager_email, presence: true
   validates :name,          presence: true
-  validates :website_url,   presence: true
 
-  validates :website_url, url: true
+  validates :website_url, url: true, if: -> { website_url.present? }
 
   validates :manager_email, email: { mx: true }
 
