@@ -29,8 +29,12 @@ module Surveys
     delegate :when_is_closed,              to: :survey_presenter
     delegate :when_is_open,                to: :survey_presenter
 
-    delegate :when_has_no_outsiders, to: :stats_presenter
-    delegate :when_has_outsiders,    to: :stats_presenter
+    delegate :when_has_categories,    to: :stats_presenter
+    delegate :when_has_no_categories, to: :stats_presenter
+    delegate :when_has_no_outsiders,  to: :stats_presenter
+    delegate :when_has_no_stats,      to: :stats_presenter
+    delegate :when_has_outsiders,     to: :stats_presenter
+    delegate :when_has_stats,         to: :stats_presenter
 
     def initialize(survey, stats)
       @survey = survey

@@ -1,0 +1,25 @@
+.container
+  .row.gemsavvy__survey--categories
+    .col.s12
+      h4.center Per category
+
+    - context.when_has_categories do
+      = render "groups/surveys/show/categories", context: context
+.row
+  .col.s12
+  - context.when_has_no_categories do
+    = render "groups/surveys/show/no_categories", context: context
+
+.gemsavvy__survey--outsiders
+  .row
+    .col.s12
+      h4.center Outsiders
+  .row
+    .col.s12
+      p.center
+        |
+          Gems which have a rising number of stars on GitHub. These gems are only used by few people in your community.
+  - context.when_has_outsiders do
+    = render "groups/surveys/show/outsiders", context: context
+  - context.when_has_no_outsiders do
+    = render "groups/surveys/show/no_outsiders", context: context

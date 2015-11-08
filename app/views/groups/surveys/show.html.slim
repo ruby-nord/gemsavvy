@@ -2,94 +2,10 @@
   = javascript_include_tag 'charts'
 
 .row.gemsavvy__survey
-  .container
-    .col.s12.gemsavvy__survey--group
-      .col.s12.m8.l10
-        .col.s12.m3.l2.group--avatar
-          = image_tag @context.group_logo_url(:standard), class: "responsive-img circle"
+  = render 'groups/surveys/show/header', context: @context
 
-        .col.s12.m9.l10.group--info
-          h5.group--info-name = @context.group_name
-          span
-            - @context.when_group_has_website_url do
-              = link_to @context.group_website_url, @context.group_website_url, class: "flow-text", target: "_blank"
+  - @context.when_has_stats do
+    = render 'groups/surveys/show/stats', context: @context
 
-      .col.s12.m4.l3.group--stats.grey-text.light-font
-        .col.s6.m12.group--stats--info
-          span.group--stats-number = @context.gemfiles_count
-          span = 'Member'.pluralize(@context.gemfiles_count)
-        .col.s6.m12.group--stats--info
-          = link_to('#', :'data-clipboard-text' => group_survey_url(@context.group_id, @context.survey_code),
-            class: 'btn copy-clipboard-js') do
-              | Share
-              i.material-icons.right share
-        - @context.when_is_closed do
-          .col.s6.m12.group--stats--info
-            span Closed survey
-
-  .col.s12.grey.lighten-4.center.group--meta
-    .container
-      h4.group--meta-name = @context.survey_name
-      h5.group--meta-dates = @context.survey_period
-
-      - @context.when_has_survey_description do
-        p.group--meta-description = @context.survey_description
-
-      .row
-        .col.s12.gemsavvy__survey--callout
-          - @context.when_is_open do
-            = link_to("Upload your Gemfile", new_group_survey_gemfile_url(@context.group_id, @context.survey_code), class: 'btn btn-small waves-effect waves-light')
-
-  .container
-    .row.gemsavvy__survey--categories
-      .col.s12.
-        h4.center Per category
-
-      - @context.each_stat_by_category do |category_stats|
-        .col.s12.l6
-          .card
-            .card-image.waves-effect.waves-block.waves-light
-              span.activator
-                = pie_chart group_survey_category_chart_path(@context.group_slug, @context.survey_code, category_stats.id)
-
-            .card-content
-              span.card-title.activator.grey-text.text-darken-4.truncate
-                = category_stats.name
-                i.material-icons.right more_vert
-            .card-reveal
-              span.card-title.grey-text.text-darken-4.truncate
-                = category_stats.name
-                i.material-icons.right close
-
-              ul.collection
-                - category_stats.each_gempackage do |gempackage_stats|
-                  li.collection-item
-                    span.title = gempackage_stats.name
-                    p.link = link_to gempackage_stats.url, gempackage_stats.url, target: "_blank"
-                    p
-                      span
-                        i.material-icons.left group
-                      span.category-numbers
-                        => gempackage_stats.usage_count
-                      span
-                        => 'member'.pluralize(gempackage_stats.usage_count)
-                    p
-                      span
-                        i.material-icons.left grade
-                      span.category-numbers
-                        => gempackage_stats.github_stars
-                      span
-                        => 'stargazer'.pluralize(gempackage_stats.github_stars)
-  .gemsavvy__survey--outsiders
-    .row
-      .col.s12
-        h4.center Outsiders
-    .row
-      .col.s12
-        p.center
-          |
-            Gems which have a rising number of stars on GitHub. These gems are only used by few people in your community.
-    - @context.when_has_outsiders do
-      = render "groups/surveys/outsiders", context: @context
-    - @context.when_has_no_outsiders do
-      = render "groups/surveys/no_outsiders", context: @context
+  - @context.when_has_no_stats do
+    = render 'groups/surveys/show/no_stats', context: @context

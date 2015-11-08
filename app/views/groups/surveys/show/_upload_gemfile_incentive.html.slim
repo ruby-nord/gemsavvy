@@ -1,19 +1,14 @@
-.grey.lighten-4
+.grey.lighten-4.gemsavvy__survey--gemfile-icentive
   .container
     .row.center
-      .col.s12
-        p
-          |
-            Unfortunately we don't have enough data to show you outsiders... But,
-            together, we can change that!
       .col.s12.m6
         .center.icon-block
-          i.material-icons.large file_upload
+          i.material-icons.large.grey-text.text-lighten-1 file_upload
           p
             =' link_to("Upload your Gemfile", new_group_survey_gemfile_url(@context.group_id, @context.survey_code), class: 'btn btn-large waves-effect waves-light')
       .col.s12.m6
         .center.icon-block
-          i.material-icons.large share
+          i.material-icons.large.grey-text.text-lighten-1 share
           p
             | Share this survey with your community
 
