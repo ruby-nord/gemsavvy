@@ -1,0 +1,25 @@
+.container
+  .row
+    - context.each_outsider do |gempackage_stats|
+      .col.s12.l6
+        .card
+          .card-content
+            span.card-title.grey-text.text-darken-4.truncate = gempackage_stats.name
+            ul.collection
+              li.collection-item
+                p = gempackage_stats.category_name
+                p.link = link_to gempackage_stats.url, gempackage_stats.url, target: "_blank"
+                p
+                  span.icon.left
+                    i.material-icons group
+                  span.category-numbers
+                    => gempackage_stats.usage_count
+                  span
+                    => 'member'.pluralize(gempackage_stats.usage_count)
+                p.last-item
+                  span.icon.left
+                    i.material-icons grade
+                  span.category-numbers
+                    => gempackage_stats.github_stars
+                  span
+                    => 'stargazer'.pluralize(gempackage_stats.github_stars)

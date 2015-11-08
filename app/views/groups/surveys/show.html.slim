@@ -27,6 +27,8 @@
     .container
       h4.group--meta-name = @context.survey_name
       h5.group--meta-dates = @context.survey_period
+      - @context.when_has_survey_description do
+        p.group--meta-description = @context.survey_description
 
   .container
     .row.gemsavvy__survey--categories
@@ -68,31 +70,16 @@
                         => gempackage_stats.github_stars
                       span
                         => 'stargazer'.pluralize(gempackage_stats.github_stars)
-  .container
-    .row.gemsavvy__survey--outsiders
+  .gemsavvy__survey--outsiders
+    .row
       .col.s12
         h4.center Outsiders
+    .row
       .col.s12
-        - @context.each_outsider do |gempackage_stats|
-          .col.s12.l6
-            .card
-              .card-content
-                span.card-title.grey-text.text-darken-4.truncate = gempackage_stats.name
-                ul.collection
-                  li.collection-item
-                    p = gempackage_stats.category_name
-                    p.link = link_to gempackage_stats.url, gempackage_stats.url, target: "_blank"
-                    p
-                      span.icon.left
-                        i.material-icons group
-                      span.category-numbers
-                        => gempackage_stats.usage_count
-                      span
-                        => 'member'.pluralize(gempackage_stats.usage_count)
-                    p.last-item
-                      span.icon.left
-                        i.material-icons grade
-                      span.category-numbers
-                        => gempackage_stats.github_stars
-                      span
-                        => 'stargazer'.pluralize(gempackage_stats.github_stars)
+        p.center
+          |
+            Gems which have a rising number of stars on GitHub. These gems are only used by few people in your community.
+    - @context.when_has_outsiders do
+      = render partial: "groups/surveys/outsiders", locals: { context: @context }
+    - @context.when_has_no_outsiders do
+      = render partial: "groups/surveys/no_outsiders", locals: { context: @context }

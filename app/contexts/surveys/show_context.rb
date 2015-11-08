@@ -12,11 +12,13 @@ module Surveys
 
     delegate  :count,       to: :gemfiles,  prefix: true
 
+    delegate  :id,          to: :group,     prefix: true
     delegate  :logo_url,    to: :group,     prefix: true
     delegate  :name,        to: :group,     prefix: true
     delegate  :slug,        to: :group,     prefix: true
     delegate  :website_url, to: :group,     prefix: true
 
+    delegate  :description, to: :survey,    prefix: true
     delegate  :code,        to: :survey,    prefix: true
     delegate  :name,        to: :survey,    prefix: true
 
@@ -46,6 +48,24 @@ module Surveys
 
     def when_group_has_website_url(&block)
       block.call if group.website_url
+    end
+
+    def when_has_no_outsiders(&block)
+      block.call unless has_oustiders?
+    end
+
+    def when_has_outsiders(&block)
+      block.call if has_oustiders?
+    end
+
+    def when_has_survey_description(&block)
+      block.call if survey_description
+    end
+
+    private
+
+    def has_oustiders?
+      stats.outsiders.present?
     end
   end
 end
