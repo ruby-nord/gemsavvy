@@ -11,6 +11,8 @@ class SurveyForm < Reform::Form
   private
 
   def closing_on_is_a_date
+    return if closing_on.is_a?(Date)
+
     Date.parse(closing_on)
   rescue ArgumentError
     errors.add(:closing_on, 'must be a valid date format: "yyyy-mm-dd"')
