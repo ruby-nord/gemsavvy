@@ -3,12 +3,13 @@
     .nav-wrapper.container
       .brand-logo.hide-on-med-and-down
         = link_to root_path do
+          
           = image_tag 'gemsavvy-logo.svg', alt: "gemsavvy"
 
-      a.button-collapse data-activates="mobile-demo" href="#"
+      a.dropdown-button.btn-flat.white-text data-activates="header-menu-drop" href="#"
         i.material-icons menu
       ul.right.hide-on-med-and-down
         li = link_to 'Create a Group', new_group_path
-      ul#mobile-demo.side-nav
+      ul#header-menu-drop.dropdown-content
         li = link_to 'Home', root_path
         li = link_to 'Create your community', new_group_path
