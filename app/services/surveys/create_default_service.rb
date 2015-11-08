@@ -13,8 +13,18 @@ module Surveys
     end
 
     def call
-      survey_service = Surveys::CreateService.new(SurveyForm, group_id, { name: DEFAULT_NAME })
+      survey_service = Surveys::CreateService.new(SurveyForm, group_id, params)
       survey_service.call
+    end
+
+    private
+
+    def params
+      { name: DEFAULT_NAME, closing_on: default_closing_date }
+    end
+
+    def default_closing_date
+      Date.current + Settings.surveys.default_timespan_in_days.days
     end
   end
 end

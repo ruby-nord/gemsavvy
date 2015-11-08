@@ -1,0 +1,6 @@
+.row
+  .container
+    h3 Create your new survey
+
+    = render 'form', survey: @context.survey, url: group_surveys_path(@context.group)
+

@@ -21,10 +21,8 @@ module Surveys
 
       model = form.model
 
-      model.group_id     = group_id
-      model.code         = generate_code
-      model.closing_on ||= generate_default_closing_date
-
+      model.group_id = group_id
+      model.code = generate_code
       model.save!
 
       model
@@ -38,10 +36,6 @@ module Surveys
 
     def generate_code
       SecureRandom.hex(7)
-    end
-
-    def generate_default_closing_date
-      Date.current + Settings.surveys.default_timespan_in_days.days
     end
   end
 end
