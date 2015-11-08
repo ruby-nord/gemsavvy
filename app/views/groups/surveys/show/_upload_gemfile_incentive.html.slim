@@ -3,14 +3,13 @@
     .row.center
       .col.s12.m6
         .center.icon-block
-          i.material-icons.large.grey-text.text-lighten-1 file_upload
+          i.material-icons.hide-on-small-only.large.grey-text.text-lighten-1 file_upload
           p
-            =' link_to("Upload your Gemfile", new_group_survey_gemfile_url(@context.group_id, @context.survey_code), class: 'btn btn-large waves-effect waves-light')
+            =' link_to("Upload your Gemfile", new_group_survey_gemfile_url(context.group_slug, context.survey_code), class: 'btn btn-large waves-effect waves-light')
       .col.s12.m6
         .center.icon-block
-          i.material-icons.large.grey-text.text-lighten-1 share
+          i.material-icons.hide-on-small-only.large.grey-text.text-lighten-1 share
           p
             | Share this survey with your community
-
           p
-            = link_to(new_group_survey_gemfile_url(@context.group_id, @context.survey_code), new_group_survey_gemfile_path(@context.group_id, @context.survey_code))
+            = link_to(group_survey_path(context.group_slug, context.survey_code)[1..-1], group_survey_path(context.group_slug, context.survey_code))

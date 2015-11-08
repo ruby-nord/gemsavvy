@@ -15,7 +15,7 @@
         span.group--stats-number = context.gemfiles_count
         span = 'Member'.pluralize(context.gemfiles_count)
       .col.s6.m12.group--stats--info
-        = link_to('#', :'data-clipboard-text' => group_survey_url(context.group_id, context.survey_code),
+        = link_to('#', :'data-clipboard-text' => group_survey_url(context.group_slug, context.survey_code),
           class: 'btn copy-clipboard-js') do
             | Share
             i.material-icons.right share
@@ -34,4 +34,4 @@
     .row
       .col.s12.gemsavvy__survey--callout
         - context.when_is_open do
-          = link_to("Upload your Gemfile", new_group_survey_gemfile_url(context.group_id, context.survey_code), class: 'btn btn-small waves-effect waves-light')
+          = link_to("Upload your Gemfile", new_group_survey_gemfile_url(context.group_slug, context.survey_code), class: 'btn btn-small waves-effect waves-light')
