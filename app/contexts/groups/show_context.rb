@@ -3,9 +3,10 @@ module Groups
 
     attr_reader :group, :surveys
 
-    delegate :logo_url,    to: :group, prefix: true
-    delegate :name,        to: :group, prefix: true
-    delegate :website_url, to: :group, prefix: true
+    delegate :logo_url,       to: :group, prefix: true
+    delegate :manager_email,  to: :group, prefix: true
+    delegate :name,           to: :group, prefix: true
+    delegate :website_url,    to: :group, prefix: true
 
     delegate :when_group_has_website_url, to: :group_presenter
 
