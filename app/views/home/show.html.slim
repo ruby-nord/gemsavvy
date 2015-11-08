@@ -2,15 +2,15 @@
   .section
     .row
       .col.s12.m6.l6.hide-on-small-only
-        img src="http://placehold.it/600x600"
+        = image_tag 'survey-preview.jpg', alt: 'Survey preview'
       .col.s12.m6.l6.gemsavvy__masthead-info.center
         = image_tag 'gemsavvy-logo.svg', alt: "gemsavvy"
         h1.gemsavvy__masthead-info--title
           | Share your jewels with your community
         .row
-          h5.gemsavvy__masthead-info--sub-title.col.s12.flow-text Compare your Gemfile with your community and discover trending gems.
+          h5.gemsavvy__masthead-info--sub-title.col.s12.flow-text Compare your Gemfile with your community and discover trending gems
         .row
-          a#download-button.btn-large.waves-effect.waves-light href="#"
+          = link_to new_group_path, id: 'download-button', class: 'btn-large waves-effect waves-light' do
             | Create your Community
             i.material-icons.right group_add
   .parallax
@@ -24,34 +24,51 @@
           .icon-block
             h5.center.flow-text Blissfully Simple
             p.light
+              | Just create a survey for your community, start to upload your Gemfile and share the link with your members.
+                The more Gemfiles you raise, the more accurate your survey will be.
         .col.s12.m6
           .icon-block
             h5.center.flow-text Safe & Anonymous
             p.light
+              | Private gems won't be tracked by our system.
+                We only collect informations about public gems found in your Gemfile.
+                We don't store your this file on third party services.
+                All your gems stays private. That said, we'll never provide access to a member gemfile.
 .container
   .section
     .row
-      .col.m6
-        h4.flow-text Comments
-        p.left-align.light Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac.
-      .col.m3
-        h4.flow-text Latest Tweets
-      .col.m3
-        h4.flow-text Latest Winners
+      .col.m4
+        h4.flow-text Crystalline Charts
+        = image_tag 'survey-chart.png', alt: 'Survey chart'
+        p.left-align.light
+          | See quickly which gems are the most used per category.
+            Compare yourself to the other members.
+            An easy way to find out if you're using the most popular gem in your community.
+      .col.m4
+        h4.flow-text Gems overview
+        = image_tag 'survey-gems.png', alt: 'Survey gems overview'
+        p.left-align.light
+          | Get details about each gem and know exactly how many of your members are using them compared to the overall Ruby community.
+            Plus, get a quick access to their Github repository.
+      .col.m4
+        h4.flow-text Outsider gems
+        = image_tag 'survey-outsider.png', alt: 'Survey gems overview'
+        p.left-align.light
+          | Find out which gems a pretty famous on Github but only used by a small bunch of nerdies from your group.
 #header-stats.row
   .container
     .row
-      h4.center Global gem stats
+      h4.center Global stats
     .row
       .col.s6.m3.center
-        | Trending
-        h5 N10,000
+        | Groups
+        h5 = @context.groups_count
       .col.s6.m3.center
-        | Next Draw
-        h5 12 hrs
+        | Surveys
+        h5 = @context.surveys_count
       .col.s6.m3.center
-        | Winners
-        h5 12 hrs
+        | Gemfiles
+        h5 = @context.gemfiles_count
       .col.s6.m3.center
-        | Login to Win
-        h5 12 hrs
+        | Gems
+        h5 = @context.gempackages_count
