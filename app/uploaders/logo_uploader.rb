@@ -1,11 +1,11 @@
 class LogoUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
-  process convert: 'png'
-  process tags: ['group_logo']
+  process convert:  'png'
+  process tags:     ['group_logo']
 
   version :standard do
-    process resize_to_fill: [100, 150, :north]
+    resize_to_fit(100, 100)
   end
 
   version :thumbnail do
