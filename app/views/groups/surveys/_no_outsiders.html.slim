@@ -1,0 +1,21 @@
+.grey.lighten-4
+  .container
+    .row.center
+      .col.s12
+        p
+          |
+            Unfortunately we don't have enough data to show you outsiders... But,
+            together, we can change that!
+      .col.s12.m6
+        .center.icon-block
+          i.material-icons.large file_upload
+          p
+            =' link_to("Upload your Gemfile", new_group_survey_gemfile_url(@context.group_id, @context.survey_code), class: 'btn btn-large waves-effect waves-light')
+      .col.s12.m6
+        .center.icon-block
+          i.material-icons.large share
+          p
+            | Share this survey with your community
+
+          p
+            = link_to(new_group_survey_gemfile_url(@context.group_id, @context.survey_code), new_group_survey_gemfile_path(@context.group_id, @context.survey_code))
