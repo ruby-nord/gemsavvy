@@ -23,13 +23,22 @@
             class: 'btn copy-clipboard-js') do
               | Share
               i.material-icons.right share
+        - @context.when_is_closed do
+          .col.s6.m12.group--stats--info
+            span Closed survey
 
   .col.s12.grey.lighten-4.center.group--meta
     .container
       h4.group--meta-name = @context.survey_name
       h5.group--meta-dates = @context.survey_period
+
       - @context.when_has_survey_description do
         p.group--meta-description = @context.survey_description
+
+      .row
+        .col.s12.gemsavvy__survey--callout
+          - @context.when_is_open do
+            = link_to("Upload your Gemfile", new_group_survey_gemfile_url(@context.group_id, @context.survey_code), class: 'btn btn-small waves-effect waves-light')
 
   .container
     .row.gemsavvy__survey--categories

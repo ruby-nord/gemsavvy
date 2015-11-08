@@ -20,4 +20,12 @@ class SurveyPresenter
   def when_has_survey_description(&block)
     block.call if survey.description
   end
+
+  def when_is_closed(&block)
+    block.call if survey.closed?
+  end
+
+  def when_is_open(&block)
+    block.call unless survey.closed?
+  end
 end
