@@ -24,7 +24,7 @@ module Groups
         gemfile = exception.context[:form]
         @context = ::Gemfiles::ActionContext.new(gemfile, survey)
 
-        flash[:alert] = 'We were not able to upload your Gemfile'
+        flash.now[:alert] = 'We were not able to upload your Gemfile'
         render :new
       end
 

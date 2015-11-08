@@ -16,7 +16,7 @@ module Groups
     rescue Errors::ValidationError => exception
       @context = ::Surveys::ActionContext.new(group, exception.context[:form])
 
-      flash[:alert] = 'We were not able to create your survey'
+      flash.now[:alert] = 'We were not able to create your survey'
       render :new
     end
 
@@ -40,7 +40,7 @@ module Groups
     rescue Errors::ValidationError => exception
       @context = ::Surveys::ActionContext.new(group, exception.context[:form])
 
-      flash[:alert] = 'We were not able to update your survey'
+      flash.now[:alert] = 'We were not able to update your survey'
       render :edit
     end
 

@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
   rescue Errors::ValidationError => exception
     @group = exception.context[:form]
 
-    flash[:alert] = 'We were not able to create your group'
+    flash.now[:alert] = 'We were not able to create your group'
     render :new
   end
 
@@ -38,7 +38,7 @@ class GroupsController < ApplicationController
   rescue Errors::ValidationError => exception
     @group = exception.context[:form]
 
-    flash[:alert] = 'We were not able to update your group'
+    flash.now[:alert] = 'We were not able to update your group'
     render :new
   end
 
