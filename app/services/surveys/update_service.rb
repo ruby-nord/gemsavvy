@@ -16,25 +16,19 @@ module Surveys
     def call
       raise Errors::ValidationError.new({ form: form }) unless form.validate(params)
 
-      form.sync
-      model = form.model
-      model.save!
+      form.save!
 
-      model
+      survey
     end
 
     private
 
     def form
-      @form ||= form_class.new(Survey.new)
+      @form ||= form_class.new(survey)
     end
 
-    def generate_code
-      SecureRandom.hex(7)
-    end
-
-    def generate_default_closing_date
-      Date.current + Settings.surveys.default_timespan_in_days.days
+    def survey
+      @survey ||= Survey.find survey_id
     end
   end
 end
