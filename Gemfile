@@ -25,6 +25,8 @@ gem 'sidekiq',         '~> 3.5.3'
 gem 'simple_form',     '~> 3.2.0'
 gem 'sinatra',         '~> 1.4.6', require: nil
 gem 'slim',            '~> 3.0.6'
+gem 'valid_email', '~> 0.0.11'
+gem 'validate_url', '~> 1.0.2'
 
 # Assets gems
 source 'https://rails-assets.org' do

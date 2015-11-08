@@ -8,6 +8,11 @@ class GroupForm < Reform::Form
   validates :name,          presence: true
   validates :website_url,   presence: true
 
+  validates :website_url, url: true
+
+  validates :manager_email, email: { mx: true }
+
   validates :logo, file_size: { less_than: 2.megabytes },
     file_content_type: { allow: ['image/jpeg', 'image/png', 'image/gif'] }
+
 end

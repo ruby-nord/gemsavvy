@@ -319,6 +319,12 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.1)
+    valid_email (0.0.11)
+      activemodel
+      mail (~> 2.6.1)
+    validate_url (1.0.2)
+      activemodel (>= 3.0.0)
+      addressable
     webrobots (0.1.1)
 
 PLATFORMS
@@ -363,6 +369,8 @@ DEPENDENCIES
   sinatra (~> 1.4.6)
   slim (~> 3.0.6)
   uglifier (~> 2.7.2)
+  valid_email (~> 0.0.11)
+  validate_url (~> 1.0.2)
 
 BUNDLED WITH
    1.10.6
