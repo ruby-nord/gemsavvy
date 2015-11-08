@@ -28,5 +28,7 @@ module Gemsavvy
     config.active_job.queue_adapter = :sidekiq
 
     config.autoload_paths << Rails.root.join('lib')
+
+    config.action_mailer.default_url_options = { host: ENV.fetch('HOST') }
   end
 end

@@ -77,6 +77,16 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  ActionMailer::Base.smtp_settings = {
+    port: ENV.fetch('MAILGUN_SMTP_PORT'),
+    address: ENV.fetch('MAILGUN_SMTP_SERVER'),
+    user_name: ENV.fetch('MAILGUN_SMTP_LOGIN'),
+    password: ENV.fetch('MAILGUN_SMTP_PASSWORD'),
+    domain: ENV.fetch('HOST'),
+    authentication: :plain,
+  }
+  ActionMailer::Base.delivery_method = :smtp
+
   config.ruby_toolbox = RubyToolbox::Mechanize.new
   config.github = Github::Octokit.new
   config.rubygems = Rubygems::Gems.new
