@@ -1,4 +1,6 @@
 class GroupForm < Reform::Form
+  include Reform::Form::ActiveRecord
+
   property :manager_email
   property :name
   property :website_url
@@ -15,4 +17,5 @@ class GroupForm < Reform::Form
   validates :logo, file_size: { less_than: 2.megabytes },
     file_content_type: { allow: ['image/jpeg', 'image/png', 'image/gif'] }
 
+  validates_uniqueness_of :name
 end
