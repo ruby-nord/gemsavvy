@@ -2,14 +2,17 @@ footer.page-footer
   .container
     .row
       .col.l6.s12
-        h5.white-text About gemSavvy
-        p.grey-text.text-lighten-4 about us text
-
+        h5.white-text About gemsavvy
+        p.grey-text.text-lighten-4
+          | gemsavvy is a platform built during the 2015 Rails Rumble contest.
+            Our purpose is to provide a simple tool that enables local Ruby communities to compare
+            the gem they're using, discover new ones and thus start discussions.
   .footer-copyright
     .container
-      | Made by
-      a.white-text href="#"  © 2015 gemSavvy. All rights reserved.
-.fixed-action-btn 
+      ' Made by
+      => link_to 'gemsavvy', root_path, class: 'a white-text'
+      | © 2015 All rights reserved
+.fixed-action-btn
   a.btn-floating.btn-large.red
     i.large.material-icons mode_edit
   ul
