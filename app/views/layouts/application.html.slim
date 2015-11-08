@@ -10,6 +10,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
+
   body
     = render 'layouts/header'
     = render 'layouts/railsrumble_banner'
@@ -17,3 +18,11 @@ html
       = render 'layouts/flash'
       = yield
     = render 'layouts/footer'
+    javascript:
+      var rumbleBannerBackgroundColor, rumbleBannerTextColor, rumbleBannerLinkColor, rumbleBannerPlacement;
+      rumbleBannerBackgroundColor = "#161616";
+      rumbleBannerTextColor = "#b0b0b0";
+      rumbleBannerLinkColor = "#ffffff";
+      rumbleBannerPlacement = "bottom";
+
+    script src="https://d4nnn7wspfa3h.cloudfront.net/banner-2015.js" type="text/javascript"
