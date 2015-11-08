@@ -3,6 +3,8 @@
     .col.s6.offset-s2
       blockquote
         | Unfortunately we don't have enough data to show you categories...
-        br
-        | But, together, we can change that!
-= render 'groups/surveys/show/upload_gemfile_incentive', context: context
+        - context.when_is_open do
+          br
+          | But, together, we can change that!
+- context.when_is_open do
+  = render 'groups/surveys/show/upload_gemfile_incentive', context: context

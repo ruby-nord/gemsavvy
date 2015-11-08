@@ -3,6 +3,8 @@
     .col.s6.offset-s1
       blockquote
         | Whoops! Looks like we don't have enough members in this community to have relevant stats.
-        br
-        | Join us and upload your Gemfile on this survey!
-= render 'groups/surveys/show/upload_gemfile_incentive', context: context
+        - context.when_is_open do
+          br
+          | Join us and upload your Gemfile on this survey!
+- context.when_is_open do
+  = render 'groups/surveys/show/upload_gemfile_incentive', context: context
