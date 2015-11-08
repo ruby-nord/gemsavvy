@@ -26,6 +26,8 @@ module Surveys
     delegate :period,      to: :survey_presenter, prefix: :survey
 
     delegate :when_has_survey_description, to: :survey_presenter
+    delegate :when_is_closed,              to: :survey_presenter
+    delegate :when_is_open,                to: :survey_presenter
 
     delegate :when_has_no_outsiders, to: :stats_presenter
     delegate :when_has_outsiders,    to: :stats_presenter
