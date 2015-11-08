@@ -1,0 +1,386 @@
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    line-height: 1.2em;
+    color: #ffffff;
+}
+
+.rs,
+h1.rs,
+h2.rs,
+h3.rs,
+h4.rs,
+h5.rs,
+h6.rs {
+    margin: 0 0 40px 0;
+    padding: 0 0 40px 0;
+}
+
+ol.rs,
+ul.rs {
+    list-style: none
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic
+}
+
+button,
+input,
+select,
+textarea {
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    font-family: inherit;
+    font-size: 100%;
+    outline: 0
+}
+
+button,
+input {
+    line-height: normal
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+button,
+input[type=button],
+input[type=checkbox],
+input[type=radio],
+input[type=reset],
+input[type=submit],
+label,
+select {
+    cursor: pointer
+}
+
+footer,
+input[type=search] {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-appearance: textfield
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: none
+}
+
+*,
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.showintime {
+    display: none
+}
+
+a,
+a:focus,
+a:hover {
+    outline: 0
+}
+
+a,
+li {
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+header {
+    position: relative;
+    text-align: center;
+    display: inline-block
+}
+
+.gemsavvy-wrapper {
+    background-color: #df0917;
+    text-align: center;
+    overflow: hidden;
+    padding: 40px;
+}
+
+.logo img {
+    max-width: 90%
+}
+
+.gemsavvy-content {
+    margin: 0 auto;
+    max-width: 100%
+}
+
+.gemsavvy-content h2,
+.gemsavvy-content p {
+    color: #FFF
+}
+
+.gemsavvy-content h2 {
+    text-transform: uppercase
+}
+
+.gemsavvy-content h2.title-404 {
+    font-size: 80px;
+    line-height: 120%;
+    max-width: 90%;
+    margin: 0 auto 5px
+}
+
+.gemsavvy-content p {
+    font-size: 24px
+}
+
+p {
+    font-family: 'Roboto';
+    font-weight: 400;
+    line-height: 120%
+}
+
+p.text-min {
+    font-size: 24px
+}
+
+p.text-medium {
+    font-size: 60px
+}
+
+p.text-big {
+    font-size: 80px
+}
+
+.page-404 p {
+    width: 90%;
+    max-width: 570px;
+    margin: 0 auto
+}
+
+.gemsavvy-menu ul li {
+    display: inline-block;
+    transition: all .3s ease-out 0s;
+    overflow: hidden
+}
+
+.gemsavvy-menu ul li a {
+    transition: all .3s ease-out 0s
+}
+
+.gemsavvy-menu ul li:hover {
+    transform: translateY(-8px)
+}
+
+.gemsavvy-menu ul li a {
+    background-color: #000;
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 120%;
+    color: #FFF;
+    text-transform: uppercase;
+    padding: 12px 33px 9px;
+    display: inline-block
+}
+
+.gemsavvy-social a {
+    transition: all .3s ease-out 0s;
+    color: #fff;
+    color: rgba(255, 255, 255, .8)
+}
+
+.gemsavvy-social a:hover {
+    display: inline-block;
+    color: #fff;
+    transition: all .3s ease-out 0s;
+    transform: translateY(-6px)
+}
+
+#page-404-1 .gemsavvy-content {
+    padding-top: 100px
+}
+
+.dot,
+.logo-pd-404 {
+    position: absolute
+}
+
+.logo-pd-404 {
+    top: -111px;
+    right: -265px
+}
+
+.dot {
+    top: 71px;
+    right: -10px
+}
+
+.logo-404-2,
+.logo-gemsavvy img,
+.logo-pd-404 img {
+    max-width: 100%;
+    height: auto
+}
+
+.gemsavvy-content .bg-number {
+    position: absolute;
+    top: -86px;
+    right: -272px
+}
+
+#page-404-1 .gemsavvy-menu {
+    margin-top: 21px
+}
+
+.logo-404-2,
+.logo-pd-2 {
+    max-width: 90%;
+    margin-bottom: 60px
+}
+
+.gemsavvy-content .bg-404-2 {
+    margin-bottom: 63px
+}
+
+#page-404-2 p {
+    margin: 0 auto 22px
+}
+
+#page-404-2 .gemsavvy-menu {
+    margin-top: 58px
+}
+
+.gemsavvy-content .logo-pd-2 {
+    margin-bottom: 31px
+}
+
+#page-404-3 .gemsavvy-content p {
+    margin-bottom: 74px;
+    width: 100%
+}
+
+.gemsavvy-wrapper .pull-left {
+    text-align: left
+}
+
+.gemsavvy-wrapper h2 {
+    font-size: 150px;
+    line-height: 100%
+}
+
+.pull-left h1.logo {
+    margin-bottom: 80px;
+    padding-top: 20px
+}
+
+.pull-left p {
+    margin: 0;
+    font-size: 60px;
+    width: 100%;
+    max-width: 727px;
+    line-height: 100%
+}
+
+.text-underline {
+    text-transform: uppercase;
+    text-decoration: underline
+}
+
+p.text-opacity {
+    color: rgba(255, 255, 255, .4)
+}
+
+.gemsavvy-social a {
+    display: inline-block
+}
+
+#page-maintenance-1 .gemsavvy-social,
+#page-maintenance-3 .gemsavvy-social {
+    margin-left: -10px
+}
+
+h1.logo {
+    margin-bottom: 84px
+}
+
+.maintenance-2 p {
+    font-size: 80px;
+    color: #FFF;
+    line-height: 100%
+}
+
+p.text-black {
+    color: #000;
+    line-height: 120%
+}
+
+footer {
+    background-color: #000;
+    padding: 12px 0 20px
+}
+
+footer [class*=icon-],
+footer [class^=icon-] {
+    color: #FFF
+}
+
+.gemsavvy-countdown {
+    margin-top: 29px;
+    padding-bottom: 130px
+}
+
+.gemsavvy-social {
+    text-align: center;
+    margin-top: 20px
+}
+
+footer .gemsavvy-social {
+    margin-top: 0
+}
+
+.pull-left .gemsavvy-social {
+    text-align: left;
+    padding-left: 0
+}
+
+.gemsavvy-wrapper.not-absolute {
+    position: static
+}
+
+.gemsavvy-social.pull-left {
+    text-align: left
+}
+
+.clear {
+    clear: both
+}
