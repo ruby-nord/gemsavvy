@@ -18,6 +18,7 @@ rails_rumble = Group.create!(
 )
 
 red_miners = Group.create!(
+  logo:           File.open(Rails.root.join('db/seeds/images/default-logo.png')),
   name:           'Red Miners',
   manager_email:  'hello@ruby-nord.org',
   manager_token:  'f9706ae6c647725847d3',
