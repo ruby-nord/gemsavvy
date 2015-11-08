@@ -5,9 +5,9 @@ html
     meta content="width=device-width, initial-scale=1.0" name="viewport"
 
     = render 'layouts/meta_tags'
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'application', media: 'all'
     = yield :before_javascripts
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application'
     = csrf_meta_tags
     link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
 
@@ -18,11 +18,4 @@ html
       = render 'layouts/flash'
       = yield
     = render 'layouts/footer'
-    javascript:
-      var rumbleBannerBackgroundColor, rumbleBannerTextColor, rumbleBannerLinkColor, rumbleBannerPlacement;
-      rumbleBannerBackgroundColor = "#161616";
-      rumbleBannerTextColor = "#b0b0b0";
-      rumbleBannerLinkColor = "#ffffff";
-      rumbleBannerPlacement = "bottom";
-
-    script src="https://d4nnn7wspfa3h.cloudfront.net/banner-2015.js" type="text/javascript"
+    = javascript_include_tag 'rails_rumble'
