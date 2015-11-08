@@ -1,5 +1,10 @@
 .row
   .container
     h3 Create your new group
+    
+    .col.s12.m6
+      = render 'form', group: @group
+    
+    .col.s12.m6.sideicon.hide-on-small-only
+      i.material-icons.large group_add
 
-    = render 'form', group: @group

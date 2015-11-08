@@ -7,3 +7,16 @@ a {
     padding: 3px;
   }
 }
+
+.gemsavvy__survey--table {
+  a {
+    &:hover {
+      border-bottom: 2px $primary-color solid;
+    }
+  }
+  .btn, .btn_primary {
+    &:hover {
+      border-bottom: none;
+    }
+  }
+}

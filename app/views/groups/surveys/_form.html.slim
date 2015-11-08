@@ -1,11 +1,8 @@
-.col.s12.m6
-  = simple_form_for survey, url: url do |form|
-    = hidden_field_tag :token, params[:token]
-    = form.input :name
-    = form.input :closing_on
-    = form.input :description, as: :text
+= simple_form_for survey, url: url do |form|
+  = hidden_field_tag :token, params[:token]
+  = form.input :name
+  = form.input :closing_on
+  = form.input :description, as: :text
 
-    = form.button :submit, class: "btn-primary"
+  = form.button :submit, class: "btn-primary"
 
-.col.s12.m6.sideicon.hide-on-small-only
-  i.material-icons.large group_add

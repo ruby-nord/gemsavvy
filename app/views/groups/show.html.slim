@@ -1,20 +1,22 @@
-h1 = @context.group_name
+.row
+  .container.gemsavvy__survey--table
+    h3 = @context.group_name
 
-table
-  thead
-    tr
-      th Name
-      th Closing date
-      th colspan="3"
+    table
+      thead
+        tr
+          th Name
+          th Closing date
+          th colspan="3"
 
-  tbody
-    - @context.each_survey do |survey|
-      tr
-        td = survey.name
-        td = l(survey.closing_on, format: :long)
-        td = link_to 'Show', group_survey_path(@context.group, survey.code)
-        td = link_to 'Edit', edit_group_survey_path(@context.group, survey.code, token: params[:token])
-        td = link_to 'Upload Gemfile', new_group_survey_gemfile_path(@context.group, survey.code)
+      tbody
+        - @context.each_survey do |survey|
+          tr
+            td = survey.name
+            td = l(survey.closing_on, format: :long)
+            td = link_to 'Show', group_survey_path(@context.group, survey.code)
+            td = link_to 'Edit', edit_group_survey_path(@context.group, survey.code, token: params[:token])
+            td = link_to 'Upload Gemfile', new_group_survey_gemfile_path(@context.group, survey.code)
 
-= link_to 'New survey', new_group_survey_path(@context.group, token: params[:token])
+    = link_to 'New survey', new_group_survey_path(@context.group, token: params[:token]), class: "btn btn-primary"
 
