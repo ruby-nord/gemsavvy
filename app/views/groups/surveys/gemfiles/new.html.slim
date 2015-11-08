@@ -1,8 +1,28 @@
+.row.gemsavvy__survey.import-gemfile.grey.lighten-4
+  .container
+    .col.s12.gemsavvy__survey--group
+      .col.s12.m8.l10
+        .col.s12.m3.l2.group--avatar
+          = image_tag @context.group_logo_url, class: "responsive-img circle"
+
+        .col.s12.m9.l10.group--info
+          h5.group--info-name = @context.group_name
+
+      .col.s12.m4.l2.group--stats.grey-text.light-font
+        .col.s12.m12.group--stats--info
+          span.group--stats-number = @context.gemfiles_count
+          span = 'Member'.pluralize(@context.gemfiles_count)
+
+  .col.s12.center.group--meta
+    .container
+      h4.group--meta-name = @context.survey_name
+      h5.group--meta-dates = @context.survey_period
+
 .row
   .container.upload--gemfile
     h3 Upload your gemfile
     .col.s12.m6
-      = simple_form_for @gemfile, url: group_survey_gemfiles_path do |form|
+      = simple_form_for @context.gemfile, url: group_survey_gemfiles_path do |form|
         = form.input :owner_name
         = form.input :document, as: :file, label: "Gemfile"
 
