@@ -3,7 +3,8 @@ module SimpleForm
     module SpanFile
 
       def span_file(wrapper_options = nil)
-        @check_all = '<span>File</span>'
+        span_value = @options.fetch(:label, @builder.object.class.human_attribute_name(@attribute_name))
+        @check_all = "<span>#{span_value}</span>"
       end
     end
   end
