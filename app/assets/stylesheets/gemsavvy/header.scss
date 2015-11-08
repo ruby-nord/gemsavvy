@@ -10,6 +10,12 @@ nav {
   background: $primary-color;
 }
 
+ul#header-menu-drop.dropdown-content {
+  width: 210px !important;
+  color: $primary-color;
+}
+
+
 .gemsavvy__masthead {
   background: image-url("gemsavvy-parallax.jpg") $white;
   color: $white;
