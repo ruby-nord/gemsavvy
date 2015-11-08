@@ -16,4 +16,5 @@
 //= require materialize
 //= require headroom.js/headroom
 //= require headroom.js/jQuery.headroom
+//= require clipboard
 //= require gemsavvy

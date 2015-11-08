@@ -19,9 +19,10 @@
           span.group--stats-number = @context.gemfiles_count
           span = 'Member'.pluralize(@context.gemfiles_count)
         .col.s6.m12.group--stats--info
-          a.waves-effect.waves-grey href="#!"
-            span Share
-            i.material-icons.right share
+          = link_to('#', :'data-clipboard-text' => group_survey_url(@context.group_id, @context.survey_code),
+            class: 'btn copy-clipboard-js') do
+              | Share
+              i.material-icons.right share
 
   .col.s12.grey.lighten-4.center.group--meta
     .container
