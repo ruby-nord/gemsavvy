@@ -9,10 +9,12 @@ Gempackage.destroy_all
 ####################
 
 rails_rumble = Group.create!(
-  name:           'Rails Rumble',
-  manager_email:  'support@railsrumble.com',
-  manager_token:  'f9706ae6c647725847d3',
-  website_url:    'http://railsrumble.com/'
+  logo:           File.open(Rails.root.join('db/seeds/images/rails-rumble-logo.png')),
+  name:           Settings.rails_rumble.group.name,
+  manager_email:  Settings.rails_rumble.group.manager_email,
+  manager_token:  Settings.rails_rumble.group.manager_token,
+  website_url:    Settings.rails_rumble.group.website_url,
+  slug:           Settings.rails_rumble.group.slug
 )
 
 red_miners = Group.create!(
@@ -29,17 +31,17 @@ red_miners = Group.create!(
 ####################
 
 rails_rumble_survey = rails_rumble.surveys.create!(
-  name:         'Rails Rumble - Gem surveys 2015',
-  description:  'Gemfiles Analysis of 2015 Rails Rumble participants',
-  code:         'd4059b37881b6e',
-  closing_on:   '2015-11-30'
+  name:         Settings.rails_rumble.survey.name,
+  description:  Settings.rails_rumble.survey.description,
+  code:         Settings.rails_rumble.survey.code,
+  closing_on:   Settings.rails_rumble.survey.closing_on
 )
 
 red_miners_survey = red_miners.surveys.create!(
   name:         'Red Miners - Gem surveys 2015',
   description:  'Curated gems found on Red Miners projects',
   code:         '823b8ad1d2a28b',
-  closing_on:   '2015-11-30'
+  closing_on:   '2015-11-08'
 )
 
 ####################

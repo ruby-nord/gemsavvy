@@ -19,6 +19,19 @@ meta_tags:
   title: gemsavvy - Share your jewels with your community
   twitter_account: _rubynord
 
+rails_rumble:
+  group:
+    name: 'Rails Rumble'
+    manager_email: 'hello@ruby-nord.org'
+    manager_token: 'f9706ae6c647725847d3'
+    website_url: 'http://railsrumble.com/'
+    slug: 'rails-rumble'
+  survey:
+    closing_on: '2015-11-30'
+    code: 'd4059b37881b6e'
+    description: 'Gemfiles Analysis of 2015 Rails Rumble participants'
+    name: 'Rails Rumble - Gem surveys 2015'
+
 surveys:
   default_timespan_in_days: 30
 
