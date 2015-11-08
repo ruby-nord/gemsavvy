@@ -1,28 +1,23 @@
 module Surveys
-  class CreateService
-    CODE_SIZE = 7
+  class UpdateService
 
     private
 
-    attr_reader :form_class, :group_id, :params
+    attr_reader :form_class, :survey_id, :params
 
     public
 
-    def initialize(form_class, group_id, params)
+    def initialize(form_class, survey_id, params)
       @form_class = form_class
-      @group_id   = group_id
-      @params     = params
+      @survey_id = survey_id
+      @params = params
     end
 
     def call
       raise Errors::ValidationError.new({ form: form }) unless form.validate(params)
 
       form.sync
-
       model = form.model
-
-      model.group_id = group_id
-      model.code = generate_code
       model.save!
 
       model
@@ -36,6 +31,10 @@ module Surveys
 
     def generate_code
       SecureRandom.hex(7)
+    end
+
+    def generate_default_closing_date
+      Date.current + Settings.surveys.default_timespan_in_days.days
     end
   end
 end

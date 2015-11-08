@@ -5,15 +5,16 @@ table
     tr
       th Name
       th Closing date
-      th colspan="2"
+      th colspan="3"
 
   tbody
     - @context.each_survey do |survey|
       tr
         td = survey.name
-        td = survey.closing_on
+        td = l survey.closing_on, format: :long
         td = link_to 'Show', group_survey_path(@context.group, survey.code)
+        td = link_to 'Edit', edit_group_survey_path(@context.group, survey.code, token: params[:token])
         td = link_to 'Upload Gemfile', new_group_survey_gemfile_path(@context.group, survey.code)
 
-= link_to 'New survey'
+= link_to 'New survey', new_group_survey_path(@context.group, token: params[:token])
 
