@@ -7,7 +7,8 @@
       div class="col s12 m3"
         div class="card"
           div class="card-image"
-            = link_to image_tag("team/#{member.avatar}", alt: member.name), member.website
+            = link_to member.website do
+              = image_tag("team/#{member.avatar}", alt: member.name)
             span class="card-title" = member.name
           div class="card-content"
             p = member.bio

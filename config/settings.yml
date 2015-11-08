@@ -49,28 +49,28 @@ surveys:
 
 team:
   -
-    avatar: anthony.jpeg
+    avatar: anthony.jpg
     bio: Code machine
     github: alaibe
     name: Anthony Laibe
     twitter: a_laibe
     website: https://github.com/alaibe
   -
-    avatar: cecile.jpeg
+    avatar: cecile.jpg
     bio: Clean code psychotic
     github: cveneziani
     name: Cecile Veneziani
     twitter: cecilitse
     website: http://cecilitse.org/
   -
-    avatar: keuvain.jpeg
+    avatar: keuvain.jpg
     bio: Design patterns master
     github: kdisneur
     name: Kevin Disneur
     twitter: kdisneur
     website: https://kevin.disneur.me/
   -
-    avatar: michael.jpeg
+    avatar: michael.jpg
     bio: Design magician
     github: lovekaizen
     name: Michael Fatoki-Bello
