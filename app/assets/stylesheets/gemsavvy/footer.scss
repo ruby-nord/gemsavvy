@@ -1,0 +1,25 @@
+#footer-stats {
+  background: $secondary-color;
+  background-size: cover;
+  padding: 12px 0 0 0;
+  margin: 0;
+  color: $white;
+  h1, h2, h3, h4, h5 {
+    color: $white;
+  }
+  .stats-count {
+    font-size: 5rem;
+  }
+}
+
+
+footer.page-footer {
+  background: image-url("gemsavvy-parallax.jpg") $primary-color;
+}
+.side-nav {
+  background: $secondary-color;
+}
+
+footer.page-footer {
+  margin-top: 0;
+}

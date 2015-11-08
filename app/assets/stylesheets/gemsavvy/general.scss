@@ -1,6 +1,36 @@
-a {
+body {
+  background: $white;
+  font-weight: normal;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: lighter;
+}
+strong {
+  font-weight: bold;
+}
+
+a, .icon-block i {
   color: $primary-color;
 }
+
+.light-font {
+  font-weight: lighter;
+}
+.extra-bold-font {
+  font-weight: bold;
+}
+
+img {
+  width: $image-width;
+}
+
 .upload--gemfile {
   .error-block, .help-block {
     color: $error-color;
@@ -18,5 +48,13 @@ a {
     &:hover {
       border-bottom: none;
     }
+  }
+}
+
+.sideicon {
+  text-align: center;
+  i {
+    font-size: 300px;
+    color: $gray;
   }
 }
