@@ -107,6 +107,7 @@
 
 @media #{$medium-and-up} {
   .gemsavvy__survey {
+    margin-bottom: 0;
     &.import-gemfile {
       padding-bottom: 30px;
       .gemsavvy__survey--group {
