@@ -22,7 +22,8 @@ red_miners = Group.create!(
   name:           'Red Miners',
   manager_email:  'hello@ruby-nord.org',
   manager_token:  'f9706ae6c647725847d3',
-  website_url:    'http://gemsavvy.r15.railsrumble.com/'
+  website_url:    'http://gemsavvy.r15.railsrumble.com/',
+  slug:           'red-miners'
 )
 
 ####################
