@@ -4,7 +4,7 @@
     .col.s12.m6
       = simple_form_for @gemfile, url: group_survey_gemfiles_path do |form|
         = form.input :owner_name
-        = form.input :document, as: :file
+        = form.input :document, as: :file, label: "Gemfile"
 
         = form.button :submit, 'Upload Gemfile', class: "btn-primary"
     .col.s12.m6.sideicon.hide-on-small-only
