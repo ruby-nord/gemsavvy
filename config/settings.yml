@@ -22,3 +22,24 @@ meta_tags:
 surveys:
   default_timespan_in_days: 30
 
+team:
+  -
+    avatar: keuvain.jpeg
+    github: kdisneur
+    name: Kevin Disneur
+    twitter: kdisneur
+  -
+    avatar: cecile.jpeg
+    github: cveneziani
+    name: Cecile Veneziani
+    twitter: cecilitse
+  -
+    avatar: anthony.jpeg
+    github: alaibe
+    name: Anthony Laibe
+    twitter: a_laibe
+  -
+    avatar: michael.jpeg
+    github: lovekaizen
+    name: Michael Fatoki-Bello
+    twitter: lovekaizen

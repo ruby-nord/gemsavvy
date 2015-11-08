@@ -1,0 +1,15 @@
+.row
+  .container
+    .col.s12.gemsavvy__survey--group
+      h3 Team
+
+    - Settings.team.each do |member|
+      div class="col s12 m3"
+        div class="card"
+          div class="card-image"
+            = image_tag "team/#{member.avatar}"
+            span class="card-title" = member.name
+          div class="card-action"
+            ul
+              li = link_to "github/#{member.github}", "http://github.com/#{member.github}"
+              li = link_to "@#{member.twitter}", "http://twitter.com/#{member.twitter}"
