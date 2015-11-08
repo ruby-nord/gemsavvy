@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require materialize
 //= require headroom.js/headroom
 //= require headroom.js/jQuery.headroom
