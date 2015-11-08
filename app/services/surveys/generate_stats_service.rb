@@ -34,15 +34,17 @@ module Surveys
     end
 
     def minimal_gempackages_categories
+      threshold = Settings.gempackages.by_category_min_threshold
+
       query = "SELECT categories.category_id FROM (
           SELECT DISTINCT gempackages.category_id, gempackages.id
           FROM gemfiles
           INNER JOIN gemfiles_gempackages ON gemfiles_gempackages.gemfile_id = gemfiles.id
           INNER JOIN gempackages ON gemfiles_gempackages.gempackage_id = gempackages.id
-          WHERE survey_id = 52
+          WHERE survey_id = #{survey_id}
         ) AS categories
         GROUP BY categories.category_id
-        HAVING count(*) >= %s;" % Settings.gempackages.by_category_min_threshold
+        HAVING count(*) >= #{threshold};"
 
       category_ids = ActiveRecord::Base.connection.exec_query(query).rows.flatten
 
