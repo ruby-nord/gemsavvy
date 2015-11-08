@@ -11,20 +11,25 @@ $rails-rumble-btn-color:    #000000;
   .btn-primary {
     background: $rails-rumble-btn-bg-color;
     color:      $rails-rumble-btn-color;
-    margin-top: 1em;
+    margin-top: 10px;
   }
 
   .row {
     margin-bottom: 0;
   }
 
+  .logo img {
+    height: 50px;
+    width: 50px;
+  }
+
+  p {
+    margin: 0;
+  }
+
   @media #{$small-and-down} {
     .callout, .logo {
       text-align: center;
-    }
-
-    .logo img {
-      width: 50%;
     }
   }
 
