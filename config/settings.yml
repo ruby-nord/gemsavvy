@@ -11,6 +11,9 @@ gempackages:
   outsiders_max_threshold: 50
   outsiders_usage_percentage_threshold: 10
 
+mailer:
+  from: 'hello@ruby-nord.org'
+
 meta_tags:
   description: |
     Our purpose is to provide a simple tool that enables local Ruby
