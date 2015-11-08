@@ -209,6 +209,7 @@ GEM
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
+    rack-cors (0.4.0)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -346,6 +347,7 @@ DEPENDENCIES
   pry-stack_explorer (~> 0.4.9)
   puma (~> 2.15.2)
   quiet_assets (~> 1.1.0)
+  rack-cors (~> 0.4.0)
   rails (~> 4.2.4)
   rails-assets-headroom.js (= 0.7.0)!
   rails-assets-jquery (= 2.1.4)!
