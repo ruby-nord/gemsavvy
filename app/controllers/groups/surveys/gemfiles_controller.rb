@@ -4,7 +4,11 @@ module Groups
 
       before_action :survey, only: :new
 
+      rescue_from Gemfiles::ClosedSurveyError, with: :redirect_to_survey
+
       def new
+        fail Gemfiles::ClosedSurveyError.new(survey) if survey.closed?
+
         @gemfile = GemfileForm.new(Gemfile.new)
       end
 
@@ -20,12 +24,15 @@ module Groups
 
         flash[:alert] = 'We were not able to upload your Gemfile'
         render :new
-      rescue Gemfiles::ClosedSurveyError => exception
+      end
+
+      private
+
+      def redirect_to_survey(exception)
         flash[:alert] = exception.message
 
         redirect_to group_survey_path(group, survey.code)
       end
-
     end
   end
 end
