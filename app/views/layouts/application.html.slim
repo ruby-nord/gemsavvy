@@ -1,12 +1,11 @@
 doctype html
 html
   head
-    title gemsavvy - Share your jewels with your community
-
     link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
 
     meta content="width=device-width, initial-scale=1.0" name="viewport"
 
+    = render 'layouts/meta_tags'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = yield :before_javascripts
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
