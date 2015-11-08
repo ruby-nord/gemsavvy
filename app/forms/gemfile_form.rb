@@ -1,4 +1,4 @@
-require 'bundler'
+require 'bundler/dsl'
 
 class GemfileForm < Reform::Form
   property :owner_name
