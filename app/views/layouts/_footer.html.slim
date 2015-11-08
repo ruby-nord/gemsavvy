@@ -15,18 +15,4 @@ footer.page-footer
       | © 2015 All rights reserved
       = link_to 'Team', page_path('team'), class: 'grey-text text-lighten-4 right'
 
-.fixed-action-btn style=("bottom: 45px; right: 24px;")
-  a.btn-floating.btn-large.secondary
-    i.large.material-icons settings
-  ul
-    li.tooltipped data-position="left" data-delay="50" data-tooltip="Home"
-      = link_to root_path, class: 'btn-floating secondary'
-        i.material-icons home
-
-    li.tooltipped data-position="left" data-delay="50" data-tooltip="Create your group"
-      = link_to new_group_path, class: 'btn-floating secondary'
-        i.material-icons group_add
-
-    li.tooltipped data-position="left" data-delay="50" data-tooltip="Upload a Gemfile"
-      = link_to new_group_path, class: 'btn-floating secondary'
-        i.material-icons file_upload
+= render partial: "layouts/actions"
