@@ -4,6 +4,12 @@ admin:
 categories:
   default_name: 'Unknown'
 
+demo:
+  group:
+    slug: 'red-miners'
+  survey:
+    code: '823b8ad1d2a28b'
+
 gempackages:
   by_category_min_threshold: 2
   outsiders_stargazers_min_threshold: 200

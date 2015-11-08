@@ -24,7 +24,7 @@
             i.material-icons.large accessibility
             h5.center.flow-text Blissfully Simple
             p.light
-              | To create a survey of your precious gems, simply 
+              | To create a survey of your precious gems, simply
                 upload your Gemfile and share the link with your  community.
                 The more Gemfiles you raise, the more accurate your survey will be.
         .col.s12.m6
@@ -57,6 +57,13 @@
         = image_tag 'survey-outsider.png', alt: 'Survey gems overview'
         p.left-align.light
           | Find out which gems a pretty famous on Github but only used by a small bunch of nerdies from your group.
+
+.row
+  .col.s12.gemsavvy__demo_survey
+    = link_to(group_survey_path(@context.demo_group_slug, @context.demo_survey_code), class: "btn btn-large waves-effect waves-light") do
+      | Try it out now
+    p No need to register
+
 #footer-stats.row
   .container
     .row
