@@ -1,0 +1,35 @@
+- @context.each_stat_by_category do |category_stats|
+  .col.s12.l6
+    .card
+      .card-image.waves-effect.waves-block.waves-light
+        span.activator
+          = pie_chart group_survey_category_chart_path(@context.group_slug, @context.survey_code, category_stats.id)
+
+      .card-content
+        span.card-title.activator.grey-text.text-darken-4.truncate
+          = category_stats.name
+          i.material-icons.right more_vert
+      .card-reveal
+        span.card-title.grey-text.text-darken-4.truncate
+          = category_stats.name
+          i.material-icons.right close
+
+        ul.collection
+          - category_stats.each_gempackage do |gempackage_stats|
+            li.collection-item
+              span.title = gempackage_stats.name
+              p.link = link_to gempackage_stats.url, gempackage_stats.url, target: "_blank"
+              p
+                span
+                  i.material-icons.left group
+                span.category-numbers
+                  => gempackage_stats.usage_count
+                span
+                  => 'member'.pluralize(gempackage_stats.usage_count)
+              p
+                span
+                  i.material-icons.left grade
+                span.category-numbers
+                  => gempackage_stats.github_stars
+                span
+                  => 'stargazer'.pluralize(gempackage_stats.github_stars)
