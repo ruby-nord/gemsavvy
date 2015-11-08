@@ -18,7 +18,8 @@
           - category_stats.each_gempackage do |gempackage_stats|
             li.collection-item
               span.title = gempackage_stats.name
-              p.link = link_to gempackage_stats.url, gempackage_stats.url, target: "_blank"
+              - gempackage_stats.when_has_url do
+                p.link = link_to gempackage_stats.url, gempackage_stats.url, target: "_blank"
               p
                 span
                   i.material-icons.left group
