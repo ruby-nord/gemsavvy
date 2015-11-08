@@ -18,8 +18,6 @@ module Gempackages
       gempackage.save!
 
       gempackage
-    rescue Octokit::NotFound, Octokit::InvalidRepository
-      # we can't do anything about this
     end
 
     private
@@ -33,7 +31,10 @@ module Gempackages
     end
 
     def project_name
-      @project_name ||= URI.parse(gempackage.github_url).path[1..-1]
+      @project_name ||= begin
+        path = URI.parse(gempackage.github_url).path[1..-1]
+        path.ends_with?('/') ? path[0..-2] : path
+      end
     end
 
     def gempackage
