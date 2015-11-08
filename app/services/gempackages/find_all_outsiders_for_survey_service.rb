@@ -14,10 +14,11 @@ module Gempackages
     def call
       Gempackages::StatsQuery
         .all(survey.gempackages)
-        .minimum_stargazers(Settings.gempackages.outsiders_stargazers_threshold)
+        .minimum_stargazers(Settings.gempackages.outsiders_stargazers_min_threshold)
+        .maximum_stargazers(Settings.gempackages.outsiders_stargazers_max_threshold)
         .merge(not_much_used_gems)
         .sort_by_top_stargazers
-        .limit(Settings.gempackages.outsiders_threshold)
+        .limit(Settings.gempackages.outsiders_max_threshold)
     end
 
     private

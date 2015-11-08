@@ -42,7 +42,7 @@ module Surveys
           WHERE survey_id = 52
         ) AS categories
         GROUP BY categories.category_id
-        HAVING count(*) >= %s;" % Settings.gempackages.by_category_threshold
+        HAVING count(*) >= %s;" % Settings.gempackages.by_category_min_threshold
 
       category_ids = ActiveRecord::Base.connection.exec_query(query).rows.flatten
 

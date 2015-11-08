@@ -9,6 +9,10 @@ module Gempackages
           .select('count(*) as usage_count, gempackages.*')
       end
 
+      def maximum_stargazers(threshold)
+        where('github_stars <= ?', threshold)
+      end
+
       def minimum_stargazers(threshold)
         where('github_stars >= ?', threshold)
       end

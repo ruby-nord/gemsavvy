@@ -5,9 +5,10 @@ categories:
   default_name: 'Unknown'
 
 gempackages:
-  by_category_threshold: 2
-  outsiders_stargazers_threshold: 200
-  outsiders_threshold: 10
+  by_category_min_threshold: 2
+  outsiders_stargazers_min_threshold: 200
+  outsiders_stargazers_max_threshold: 1000
+  outsiders_max_threshold: 50
   outsiders_usage_percentage_threshold: 10
 
 surveys:
