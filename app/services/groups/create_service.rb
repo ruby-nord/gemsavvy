@@ -18,16 +18,15 @@ module Groups
 
       form.sync
 
-      model = form.model
+      group = form.model
+      group.manager_token = generate_token
+      group.save!
 
-      model.manager_token = generate_token
-
-      model.save!
-
-      default_survey_service = ::Surveys::CreateDefaultService.new(model.id)
+      default_survey_service = ::Surveys::CreateDefaultService.new(group.id)
       default_survey_service.call
+      GroupMailer.welcome(group.id).deliver_later
 
-      model
+      group
     end
 
     private

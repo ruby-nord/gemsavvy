@@ -12,8 +12,9 @@ development:
 
   GITHUB_ACCESS_TOKEN: ""
 
-  REDIS_URL: "redis://127.0.0.1:6379/12"
+  HOST: "127.0.0.1"
 
+  REDIS_URL: "redis://127.0.0.1:6379/12"
 
 production:
   ACTIVEADMIN_USERNAME: ""
@@ -24,5 +25,12 @@ production:
   CLOUDINARY_CLOUD_NAME: ""
 
   GITHUB_ACCESS_TOKEN: ""
+
+  HOST: ""
+
+  MAILGUN_SMTP_LOGIN: ''
+  MAILGUN_SMTP_PASSWORD: ''
+  MAILGUN_SMTP_PORT: ''
+  MAILGUN_SMTP_SERVER: ''
 
   REDIS_URL: ""

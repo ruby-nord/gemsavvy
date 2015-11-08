@@ -1,0 +1,8 @@
+Hi <%= @group.name %>
+
+You've added your group to gemsavvy.
+Here is a link to manage it: <%= group_url(@group, token: @group.manager_token) %>
+
+Cheers
+
+Gemsavvy
