@@ -1,5 +1,3 @@
-require 'bundler/dsl'
-
 class GemfileForm < Reform::Form
   property :owner_name
   property :document, virtual: true
@@ -18,7 +16,7 @@ class GemfileForm < Reform::Form
     return if document.nil?
 
     Bundler::Definition.build(document.tempfile, nil, nil)
-  rescue Bundler::Dsl::DSLError
+  rescue
     errors.add(:document, 'must be a Gemfile')
   end
 end
