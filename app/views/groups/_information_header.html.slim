@@ -6,7 +6,9 @@
           = image_tag context.group_logo_url(:standard), class: "responsive-img circle"
 
         .col.s12.m9.l10.group--info
-          h5.group--info-name = context.group_name
-          span
+          h5.group--info-name
+            = context.group_name
+          ul
+            li = mail_to context.group_manager_email, context.group_manager_email, class: "flow-text"
             - context.when_group_has_website_url do
-              = link_to context.group_website_url, context.group_website_url, class: "flow-text", target: "_blank"
+              li = link_to context.group_website_url, context.group_website_url, class: "flow-text", target: "_blank"
