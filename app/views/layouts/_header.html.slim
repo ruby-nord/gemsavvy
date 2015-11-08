@@ -1,13 +1,11 @@
 #header.headroom.navbar-fixed
   nav role="navigation"
     .nav-wrapper.container
-      .brand-logo.hide-on-med-and-down
-        = link_to root_path do
-          
-          = image_tag 'gemsavvy-logo.svg', alt: "gemsavvy"
-
       a.dropdown-button.button-collapse data-activates="header-menu-drop" href="#"
         i.material-icons menu
+      .gemsavvy__branding.hide-on-med-and-down
+        = link_to root_path do          
+          = image_tag 'gemsavvy-logo.svg', alt: "gemsavvy"
       ul.right.hide-on-med-and-down
         li = link_to 'Create a Group', new_group_path
       ul#header-menu-drop.dropdown-content
