@@ -11,7 +11,11 @@ module Gempackages
     end
 
     def call
-      find || create
+      gempackage = find || create
+
+      Gempackages::UpdateService.new(gempackage.id).cast
+
+      gempackage
     end
 
     private
@@ -23,8 +27,6 @@ module Gempackages
     def create
       gempackage = Gempackage.new name: name
       gempackage.save!
-
-      Gempackages::UpdateService.new(gempackage.id).cast
 
       gempackage
     end
