@@ -31,11 +31,9 @@ img {
   width: $image-width;
 }
 
-.upload--gemfile {
-  .error-block, .help-block {
-    color: $error-color;
-    padding: 3px;
-  }
+.error-block, .help-block {
+  color: $error-color;
+  padding: 3px;
 }
 
 .gemsavvy__survey--table {
