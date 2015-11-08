@@ -20,7 +20,7 @@ module Surveys
     private
 
     def all_categories
-      sorted_known_categories.each_with_object([]) do |category, categories_stats|
+      survey_sorted_known_categories.each_with_object([]) do |category, categories_stats|
         category_stats = Surveys::Stats::GenerateByCategoryService.new(survey_id, category.id).call
 
         if category_stats.gempackages.to_a.any?
@@ -33,8 +33,24 @@ module Surveys
       Gempackages::FindAllOutsidersForSurveyService.new(survey_id).call
     end
 
-    def sorted_known_categories
-      CategoryQuery.all(survey.categories).known.order_by_name
+    def minimal_gempackages_categories
+      query = "SELECT categories.category_id FROM (
+          SELECT DISTINCT gempackages.category_id, gempackages.id
+          FROM gemfiles
+          INNER JOIN gemfiles_gempackages ON gemfiles_gempackages.gemfile_id = gemfiles.id
+          INNER JOIN gempackages ON gemfiles_gempackages.gempackage_id = gempackages.id
+          WHERE survey_id = 52
+        ) AS categories
+        GROUP BY categories.category_id
+        HAVING count(*) >= %s;" % Settings.gempackages.by_category_threshold
+
+      category_ids = ActiveRecord::Base.connection.exec_query(query).rows.flatten
+
+      CategoryQuery.all.by_id(category_ids)
+    end
+
+    def survey_sorted_known_categories
+      minimal_gempackages_categories.known.order_by_name
     end
 
     def survey
