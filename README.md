@@ -23,3 +23,7 @@ $ foreman start
 ## Github access token
 
 You need to generate a Github access token.
+
+## License
+
+This project is released under the GPL License.
