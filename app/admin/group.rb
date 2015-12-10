@@ -47,6 +47,11 @@ ActiveAdmin.register Group do
         end
 
         column :code
+
+        column :gemfiles do |survey|
+          survey.gemfiles.count
+        end
+
         column :closing_on
       end
     end
