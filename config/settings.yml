@@ -21,7 +21,7 @@ mailer:
   from: 'hello@ruby-nord.org'
 
 meta_tags:
-  image: gemsavvy-meta
+  image: gemsavvy-meta.jpg
   short_description: gemsavvy is an awesome new way to share your Ruby trade tools with your community.
   title: gemsavvy - Share your jewels with your community
   twitter_account: _rubynord
