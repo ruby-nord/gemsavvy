@@ -11,6 +11,11 @@ ActiveAdmin.register Survey do
     column :group
     column :name
     column :code
+
+    column :gemfiles do |survey|
+      survey.gemfiles.count
+    end
+
     column :closing_on
 
     actions
