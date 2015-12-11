@@ -46,8 +46,12 @@ module Gempackages
     end
 
     def must_update_category?
+      return false if has_category?
       gempackage.last_ruby_toolbox_check_at.nil? || gempackage.last_ruby_toolbox_check_at < 1.day.ago
     end
 
+    def has_category?
+      gempackage.category.present?
+    end
   end
 end
