@@ -13,8 +13,9 @@ class GroupForm < Reform::Form
 
   validates :manager_email, email: { mx: true }
 
-  validates :logo, file_size: { less_than: 2.megabytes },
-    file_content_type: { allow: ['image/jpeg', 'image/png', 'image/gif'] }
+  validates :logo,  file_size:          { less_than: 2.megabytes },
+                    file_content_type:  { allow: ['image/jpeg', 'image/png', 'image/gif'] },
+                    if: -> { logo.present? }
 
   validates_uniqueness_of :name
 end
