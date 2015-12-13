@@ -1,14 +1,18 @@
 .row.gemsavvy__survey
   .container
     .col.s12.gemsavvy__survey--group
-      .col.s12.m8.l10
+      .row
         .col.s12.m3.l2.group--avatar
           = image_tag context.group_logo_url(:standard), class: "responsive-img circle"
 
         .col.s12.m9.l10.group--info
-          h5.group--info-name
-            = context.group_name
-          ul
-            li = mail_to context.group_manager_email, context.group_manager_email, class: "flow-text"
-            - context.when_group_has_website_url do
-              li = link_to context.group_website_url, context.group_website_url, class: "flow-text", target: "_blank"
+          .row
+            .col.s12.m9
+              h5.group--info-name
+                = context.group_name
+              ul
+                li = mail_to context.group_manager_email, context.group_manager_email, class: "flow-text"
+                - context.when_group_has_website_url do
+                  li = link_to context.group_website_url, context.group_website_url, class: "flow-text", target: "_blank"
+            .col.s12.m3.right-align
+              = link_to 'Edit', edit_group_path(@context.group, token: params[:token]), class: "btn"
