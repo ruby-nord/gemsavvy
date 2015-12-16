@@ -22,12 +22,20 @@ ActiveAdmin.register Group do
       row :id
       row :name
       row :slug
-      row :logo
+
+      row :logo do |group|
+        image_tag group.logo_url
+      end
+
       row :website_url
       row :manager_email
       row :manager_token
       row :created_at
       row :updated_at
+
+      row :manager_url do |group|
+        link_to group_path(group, token: group.manager_token), group_path(group, token: group.manager_token)
+      end
     end
 
     panel 'Surveys' do

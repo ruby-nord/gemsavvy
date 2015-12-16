@@ -31,6 +31,10 @@ ActiveAdmin.register Survey do
       row :closing_on
       row :created_at
       row :updated_at
+
+      row :public_url do |survey|
+        link_to group_survey_path(survey.group, survey.code), group_survey_path(survey.group, survey.code)
+      end
     end
 
     panel 'Gemfiles' do

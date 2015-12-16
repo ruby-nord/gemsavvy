@@ -6,9 +6,13 @@ class ApplicationController < ActionController::Base
   rescue_from Errors::UnauthorizedError,  with: :render_not_found
   rescue_from ::Groups::NotFoundError,    with: :render_not_found
 
-  before_action :rails_rumble_context
+  before_action :rails_rumble_context, unless: :admin_controller?
 
   private
+
+  def admin_controller?
+    params[:controller] =~ /^admin/
+  end
 
   def authorize!
     Groups::AuthenticateService.new(group.id, params[:token]).call
