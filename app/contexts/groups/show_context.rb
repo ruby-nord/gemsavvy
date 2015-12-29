@@ -16,7 +16,9 @@ module Groups
     end
 
     def each_survey
-      surveys.each { |survey| yield survey }
+      surveys.each do |survey|
+        yield Groups::Show::SurveyContext.new(survey)
+      end
     end
 
     private
