@@ -22,4 +22,4 @@ production:
 
   GITHUB_ACCESS_TOKEN: ""
 
-  HOST: ""
+  HOST: "gemsavvy.tips"
