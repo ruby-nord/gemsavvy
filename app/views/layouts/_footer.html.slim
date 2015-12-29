@@ -13,6 +13,9 @@ footer.page-footer
       ' Made by
       => link_to 'gemsavvy', root_path, class: 'white-text'
       | © 2015 All rights reserved
-      = link_to 'Team', page_path('team'), class: 'grey-text text-lighten-4 right'
+      .right
+        => link_to 'Team', page_path('team'), class: 'grey-text text-lighten-4'
+        '-
+        => link_to 'GitHub', Settings.github_project_url, class: 'grey-text text-lighten-4'
 
 = render "layouts/actions"
