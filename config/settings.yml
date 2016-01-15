@@ -17,6 +17,8 @@ gempackages:
   outsiders_max_threshold: 50
   outsiders_usage_percentage_threshold: 10
 
+github_project_url: http://github.com/ruby-nord/gemsavvy
+
 mailer:
   from: 'hello@ruby-nord.org'
 
