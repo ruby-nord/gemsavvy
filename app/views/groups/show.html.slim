@@ -14,11 +14,13 @@
           tr
             td = survey.name
             td = l(survey.closing_on, format: :long)
-            td = link_to 'Show', group_survey_path(@context.group, survey.code)
-            td = link_to 'Edit', edit_group_survey_path(@context.group, survey.code, token: params[:token])
+            td = link_to 'Show', group_survey_path(@context.group_slug, survey.code)
+            - @context.when_manager do
+              td = link_to 'Edit', edit_group_survey_path(@context.group_slug, survey.code, token: params[:token])
             td
               - survey.when_is_open do
-                = link_to 'Upload Gemfile', new_group_survey_gemfile_path(@context.group, survey.code)
+                = link_to 'Upload Gemfile', new_group_survey_gemfile_path(@context.group_slug, survey.code)
 
-    = link_to 'New survey', new_group_survey_path(@context.group, token: params[:token]), class: "btn btn-primary"
+    - @context.when_manager do
+      = link_to 'New survey', new_group_survey_path(@context.group_slug, token: params[:token]), class: "btn btn-primary"
 

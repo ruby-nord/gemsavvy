@@ -36,7 +36,8 @@ SimpleForm.setup do |config|
     b.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
   end
 
-  config.default_wrapper = :vertical_form
+  config.boolean_style    = :inline
+  config.default_wrapper  = :vertical_form
   config.wrapper_mappings = {
     file: :vertical_file_input
   }

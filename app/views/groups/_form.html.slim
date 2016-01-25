@@ -3,6 +3,7 @@
   = form.input :name
   = form.input :website_url
   = form.input :manager_email
-  = form.input :logo, as: :file
+  = form.input :visible, as: :boolean
+  = form.input :logo,    as: :file
 
   = form.button :submit, class: "btn-primary"

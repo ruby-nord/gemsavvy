@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 gem 'activeadmin',     github: 'activeadmin'
-gem 'bundler',          '~> 1.10.6'
+gem 'bundler',          '~> 1.11.2'
 gem 'carrierwave',      '~> 0.10.0'
 gem 'chartkick',        '~> 1.4.1'
 gem 'cloudinary',       '~> 1.1.0'
@@ -39,7 +39,7 @@ source 'https://rails-assets.org' do
 end
 
 gem 'autoprefixer-rails',   '~> 6.1.0'
-gem 'materialize-sass',     '~> 0.97.1'
+gem 'materialize-sass',     '~> 0.97.5'
 gem 'sass-rails',           '~> 5.0'
 gem 'uglifier',             '~> 2.7.2'
 

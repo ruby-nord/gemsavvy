@@ -1,7 +1,11 @@
 module Surveys
   class ActionContext
 
+    private
+
     attr_reader :survey, :group
+
+    public
 
     delegate :logo_url,       to: :group, prefix: true
     delegate :manager_email,  to: :group, prefix: true
@@ -15,7 +19,7 @@ module Surveys
 
     def initialize(group, survey)
       @survey = survey
-      @group = group
+      @group  = group
     end
 
     private
