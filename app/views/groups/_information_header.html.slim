@@ -11,8 +11,10 @@
               h5.group--info-name
                 = context.group_name
               ul
-                li = mail_to context.group_manager_email, context.group_manager_email, class: "flow-text"
+                - context.when_manager do
+                  li = mail_to context.group_manager_email, context.group_manager_email, class: "flow-text"
                 - context.when_group_has_website_url do
                   li = link_to context.group_website_url, context.group_website_url, class: "flow-text", target: "_blank"
-            .col.s12.m3.right-align
-              = link_to 'Edit', edit_group_path(@context.group, token: params[:token]), class: "btn"
+            - context.when_manager do
+              .col.s12.m3.right-align
+                = link_to 'Edit', edit_group_path(context.group_slug, token: params[:token]), class: "btn"

@@ -1,10 +1,11 @@
 class GroupForm < Reform::Form
   include Reform::Form::ActiveRecord
 
+  property :logo
   property :manager_email
   property :name
+  property :visible
   property :website_url
-  property :logo
 
   validates :manager_email, presence: true
   validates :name,          presence: true

@@ -10,6 +10,12 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
+    hints:
+      group:
+        visible: Your community will be browsable on the website.
+    labels:
+      group:
+        visible: Public
     # Examples
     # labels:
     #   defaults:

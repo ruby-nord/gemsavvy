@@ -6,6 +6,7 @@ ActiveAdmin.register Group do
   permit_params :manager_email,
                 :manager_token,
                 :name,
+                :visible,
                 :website_url
 
   index do
@@ -13,6 +14,7 @@ ActiveAdmin.register Group do
 
     column :name
     column :website_url
+    column :visible
 
     actions
   end
@@ -30,6 +32,7 @@ ActiveAdmin.register Group do
       row :website_url
       row :manager_email
       row :manager_token
+      row :visible
       row :created_at
       row :updated_at
 
@@ -71,6 +74,7 @@ ActiveAdmin.register Group do
     inputs 'Details' do
       input :name
       input :website_url
+      input :visible
     end
 
     inputs 'Manager' do

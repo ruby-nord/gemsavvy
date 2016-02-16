@@ -32,8 +32,15 @@ img {
 }
 
 .error-block, .help-block {
-  color: $error-color;
   padding: 3px;
+}
+
+.error-block {
+  color: $error-color;
+}
+
+.help-block {
+  color: $help-color;
 }
 
 .gemsavvy__survey--table {

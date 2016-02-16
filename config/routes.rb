@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root to: 'home#show'
 
-  resources :groups, only: [:new, :create, :show, :edit, :update] do
+  resources :groups, only: [:index, :show, :new, :create, :edit, :update] do
     resources :surveys, only: [:new, :create, :show, :edit, :update], module: :groups do
       scope module: :surveys do
         resources :gemfiles, only: [:new, :create]

@@ -39,7 +39,7 @@ source 'https://rails-assets.org' do
 end
 
 gem 'autoprefixer-rails',   '~> 6.1.0'
-gem 'materialize-sass',     '~> 0.97.1'
+gem 'materialize-sass',     '~> 0.97.5'
 gem 'sass-rails',           '~> 5.0'
 gem 'uglifier',             '~> 2.7.2'
 

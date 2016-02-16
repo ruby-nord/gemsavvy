@@ -16,6 +16,7 @@ module Gemfiles
 
     delegate :logo_url, to: :group,            prefix: true
     delegate :name,     to: :group,            prefix: true
+    delegate :slug,     to: :group,            prefix: true
 
     delegate :code,     to: :survey,           prefix: true
     delegate :name,     to: :survey,           prefix: true

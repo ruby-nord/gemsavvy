@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151108163952) do
+ActiveRecord::Schema.define(version: 20160118212116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,9 +94,10 @@ ActiveRecord::Schema.define(version: 20151108163952) do
     t.string   "manager_token"
     t.string   "slug"
     t.string   "website_url"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "logo"
+    t.boolean  "visible",       default: true
   end
 
   add_index "groups", ["manager_token"], name: "index_groups_on_manager_token", using: :btree

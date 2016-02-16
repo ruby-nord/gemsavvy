@@ -1,0 +1,24 @@
+.row
+  .container
+    .col.s12
+      h1 Communities
+      - @context.when_has_no_groups do
+        p Be the first community to showcase your gem surveys.
+
+    - @context.when_has_groups do
+      - @context.each_group do |group|
+        div class="col s6 l3"
+          div class="card"
+            div class="card-image"
+              = link_to group_path(group.slug) do
+                = image_tag(group.logo_url, alt: group.name)
+            div class="card-content"
+              p = link_to group.name, group_path(group.slug)
+
+    div class="col s6 l3"
+        div class="card"
+          div class="card-image"
+            = link_to new_group_path do
+              = image_tag('fallback/logo/default.png', alt: 'Create a community')
+          div class="card-content"
+            p = link_to 'Create a community'.upcase, new_group_path
