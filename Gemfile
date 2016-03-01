@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.3.0'
 
+gem 'rails',            '4.2.5.2'
+
 gem 'activeadmin',     github: 'activeadmin'
 gem 'bundler',          '~> 1.11.2'
 gem 'carrierwave',      '~> 0.10.0'
@@ -18,7 +20,6 @@ gem 'mechanize',        '~> 2.7.3'
 gem 'octokit',          '~> 4.1.1'
 gem 'pg',               '~> 0.18.3'
 gem 'puma',             '~> 2.15.2'
-gem 'rails',            '~> 4.2.5.1'
 gem 'redis',            '~> 3.2.1'
 gem 'reform',           '~> 2.0.5'
 gem 'rollbar',          '~> 2.5.2'
