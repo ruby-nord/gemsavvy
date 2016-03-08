@@ -4,3 +4,10 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+if Rails.env.development? || Rails.env.test?
+  require 'bundler/audit/task'
+  Bundler::Audit::Task.new
+
+  task default: 'bundle:audit'
+end
