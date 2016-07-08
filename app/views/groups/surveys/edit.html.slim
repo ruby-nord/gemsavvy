@@ -4,6 +4,6 @@
   .container
     h3 Update survey #{@context.survey_name}
     .col.s12.m6
-      = render 'form', survey: @context.survey, url: group_survey_path(@context.group, @context.survey_code)
+      = render 'form', survey_form: @context.form, url: group_survey_path(@context.group_slug, @context.survey_code)
     .col.s12.m6.sideicon.hide-on-small-only
       i.material-icons.large create

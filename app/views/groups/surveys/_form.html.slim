@@ -1,4 +1,4 @@
-= simple_form_for survey, url: url do |form|
+= simple_form_for survey_form, url: url do |form|
   = hidden_field_tag :token, params[:token]
   = form.input :name
   = form.input :closing_on, input_html: { class: 'datepicker' }
