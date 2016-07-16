@@ -5,7 +5,7 @@ ruby '2.3.1'
 gem 'rails',            '4.2.7'
 
 gem 'activeadmin',     github: 'activeadmin'
-gem 'bundler',          '~> 1.11.2'
+gem 'bundler',          '~> 1.12.5'
 gem 'carrierwave',      '~> 0.10.0'
 gem 'chartkick',        '~> 1.4.1'
 gem 'cloudinary',       '~> 1.1.0'
