@@ -5,7 +5,7 @@
     h3 Create your new survey
 
     .col.s12.m6
-      = render 'form', survey: @context.survey, url: group_surveys_path(@context.group)
+      = render 'form', survey_form: @context.form, url: group_surveys_path(@context.group_slug)
 
     .col.s12.m6.sideicon.hide-on-small-only
       i.material-icons.large group_add
