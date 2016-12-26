@@ -2,9 +2,12 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
-gem 'rails',            '4.2.7.1'
+gem 'rails',            '5.0.0.1'
 
 gem 'activeadmin',     github: 'activeadmin'
+# gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
 gem 'bundler',          '~> 1.12.5'
 gem 'carrierwave',      '~> 0.10.0'
 gem 'chartkick',        '~> 1.4.1'
@@ -26,7 +29,7 @@ gem 'rollbar',          '~> 2.12.0'
 gem 'sidekiq',          '~> 3.5.3'
 gem 'sidekiq-failures', '~> 0.4.5'
 gem 'simple_form',      '~> 3.2.0'
-gem 'sinatra',          '~> 1.4.6', require: nil
+# gem 'sinatra',          '~> 1.4.6', require: nil
 gem 'slim',             '~> 3.0.6'
 gem 'valid_email',      '~> 0.0.11'
 gem 'validate_url',     '~> 1.0.2'
@@ -39,9 +42,9 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-jquery-ujs',  '1.1.0'
 end
 
-gem 'autoprefixer-rails',   '~> 6.1.0'
+gem 'autoprefixer-rails',   '~> 6.6.0'
 gem 'materialize-sass',     '~> 0.97.5'
-gem 'sass-rails',           '~> 5.0'
+gem 'sass-rails',           '~> 5.0.6'
 gem 'uglifier',             '~> 2.7.2'
 
 group :development do
@@ -51,7 +54,6 @@ group :development do
   gem 'pry-byebug',         '~> 3.3.0'
   gem 'pry-remote',         '~> 0.1.8'
   gem 'pry-stack_explorer', '~> 0.4.9'
-  gem 'quiet_assets',       '~> 1.1.0'
 end
 
 group :production do
