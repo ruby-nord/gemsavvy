@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.4.0'
 
 gem 'rails',            '5.0.1'
 
 gem 'activeadmin',         github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources' # required by activeadmin
 
-gem 'bundler',          '~> 1.12.5'
+gem 'bundler',          '~> 1.13.3'
 gem 'carrierwave',      '~> 0.10.0'
 gem 'chartkick',        '~> 1.4.1'
 gem 'cloudinary',       '~> 1.1.0'
