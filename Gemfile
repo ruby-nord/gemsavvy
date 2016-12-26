@@ -4,9 +4,8 @@ ruby '2.3.1'
 
 gem 'rails',            '5.0.0.1'
 
-gem 'activeadmin',     github: 'activeadmin'
-# gem 'activeadmin', github: 'activeadmin/activeadmin'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'activeadmin',         github: 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources' # required by activeadmin
 
 gem 'bundler',          '~> 1.12.5'
 gem 'carrierwave',      '~> 0.10.0'
@@ -26,10 +25,9 @@ gem 'puma',             '~> 2.15.2'
 gem 'redis',            '~> 3.2.1'
 gem 'reform',           '~> 2.0.5'
 gem 'rollbar',          '~> 2.12.0'
-gem 'sidekiq',          '~> 3.5.3'
+gem 'sidekiq',          '~> 4.2.7'
 gem 'sidekiq-failures', '~> 0.4.5'
 gem 'simple_form',      '~> 3.2.0'
-# gem 'sinatra',          '~> 1.4.6', require: nil
 gem 'slim',             '~> 3.0.6'
 gem 'valid_email',      '~> 0.0.11'
 gem 'validate_url',     '~> 1.0.2'
