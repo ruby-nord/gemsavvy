@@ -7,7 +7,7 @@ gem 'rails',            '5.0.1'
 gem 'activeadmin',         github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources' # required by activeadmin
 
-gem 'bundler',          '~> 1.14.6'
+gem 'bundler',          '~> 1.15.4'
 gem 'carrierwave',      '~> 0.10.0'
 gem 'chartkick',        '~> 1.4.1'
 gem 'cloudinary',       '~> 1.1.0'
