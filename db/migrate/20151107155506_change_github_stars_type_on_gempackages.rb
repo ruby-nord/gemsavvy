@@ -1,4 +1,4 @@
-class ChangeGithubStarsTypeOnGempackages < ActiveRecord::Migration
+class ChangeGithubStarsTypeOnGempackages < ActiveRecord::Migration[5.0]
   def up
     change_column :gempackages, :github_stars, 'integer USING CAST(github_stars AS integer)'
   end

@@ -1,4 +1,4 @@
-class AddUniqueNameIndexForGroups < ActiveRecord::Migration
+class AddUniqueNameIndexForGroups < ActiveRecord::Migration[5.0]
   def change
     add_index :groups, :name, unique: true
   end

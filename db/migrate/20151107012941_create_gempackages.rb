@@ -1,4 +1,4 @@
-class CreateGempackages < ActiveRecord::Migration
+class CreateGempackages < ActiveRecord::Migration[5.0]
   def change
     create_table :gempackages do |t|
       t.string      :name
