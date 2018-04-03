@@ -1,5 +1,5 @@
 ActiveAdmin.register Group do
-  before_filter only: [:show, :edit, :update, :destroy] do
+  before_action only: [:show, :edit, :update, :destroy] do
     @group = Group.friendly.find(params[:id])
   end
 
