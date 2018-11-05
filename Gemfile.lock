@@ -228,7 +228,7 @@ GEM
     pry-stack_explorer (0.4.9.2)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
-    puma (3.6.2)
+    puma (3.12.0)
     rack (2.0.5)
     rack-protection (2.0.1)
       rack
@@ -358,7 +358,7 @@ DEPENDENCIES
   activeadmin (~> 1.2.1)
   autoprefixer-rails (~> 6.6.0)
   better_errors (~> 2.1.1)
-  bundler (~> 1.16.1)
+  bundler (~> 1.17.1)
   bundler-audit (>= 0.5.0)
   carrierwave (~> 0.10.0)
   chartkick (~> 1.4.1)
@@ -378,7 +378,7 @@ DEPENDENCIES
   pry-byebug (~> 3.3.0)
   pry-remote (~> 0.1.8)
   pry-stack_explorer (~> 0.4.9)
-  puma (~> 3.6.2)
+  puma (~> 3.12.0)
   rails (= 5.1.6)
   rails-assets-clipboard (= 1.5.3)!
   rails-assets-headroom.js (= 0.7.0)!
@@ -398,7 +398,7 @@ DEPENDENCIES
   validate_url (~> 1.0.2)
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.5.3p105
 
 BUNDLED WITH
-   1.16.2
+   1.17.1

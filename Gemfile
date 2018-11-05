@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '2.5.1'
+ruby '2.5.3'
 
 gem 'rails',            '5.1.6'
 
 gem 'activeadmin',      '~> 1.2.1'
-gem 'bundler',          '~> 1.16.1'
+gem 'bundler',          '~> 1.17.1'
 gem 'carrierwave',      '~> 0.10.0'
 gem 'chartkick',        '~> 1.4.1'
 gem 'cloudinary',       '~> 1.9.1'
@@ -19,7 +19,7 @@ gem 'high_voltage',     '~> 3.0.0'
 gem 'mechanize',        '~> 2.7.3'
 gem 'octokit',          '~> 4.1.1'
 gem 'pg',               '~> 0.18.3'
-gem 'puma',             '~> 3.6.2'
+gem 'puma',             '~> 3.12.0'
 gem 'redis',            '~> 3.2.1'
 gem 'reform',           '~> 2.0.5'
 gem 'rollbar',          '~> 2.12.0'
