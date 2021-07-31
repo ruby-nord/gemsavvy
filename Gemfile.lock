@@ -231,7 +231,8 @@ GEM
     pry-stack_explorer (0.4.9.2)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
-    puma (3.12.6)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-protection (2.0.1)
@@ -384,7 +385,7 @@ DEPENDENCIES
   pry-byebug (~> 3.3.0)
   pry-remote (~> 0.1.8)
   pry-stack_explorer (~> 0.4.9)
-  puma (~> 3.12.6)
+  puma (~> 4.3.8)
   rails (= 5.1.6)
   rails-assets-clipboard (= 1.5.3)!
   rails-assets-headroom.js (= 0.7.0)!
