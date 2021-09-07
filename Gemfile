@@ -44,7 +44,7 @@ gem 'sass-rails',           '~> 5.0.6'
 gem 'uglifier',             '~> 2.7.2'
 
 group :development do
-  gem 'better_errors',      '~> 2.1.1'
+  gem 'better_errors',      '~> 2.8.0'
   gem 'bundler-audit',      '>= 0.5.0', require: false
   gem 'pry',                '~> 0.10.3'
   gem 'pry-byebug',         '~> 3.3.0'
